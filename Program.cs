@@ -30,7 +30,7 @@ namespace Akvarium
 
                     foreach (DataRow radek in vysledky.Tables[0].Rows)
                     {
-                        Console.WriteLine("Jmeno: " + radek[0] + ", Prijmeni: " + radek[1] + ", anglicky: " + radek[2]);
+                        Console.WriteLine("Název akvaria: " + radek[0] + ", Jméno: " + radek[1] + ", Příjmení: " + radek[2]);
                     }
 
                     
