@@ -5,7 +5,11 @@ ORDER BY [Akvarium_nazev];*/
 
 
 
-SELECT [Akvarium].[Akvarium_nazev],[Ryba].[Ryba_nazev],[Obsah_akvaria].[Datum_prijeti],[Obsah_akvaria].[Datum_odebrani]
+SELECT [Ryba_nazev],[Akvarium_nazev],[Datum_pridani],[Datum_odebrani]
 FROM [Obsah_akvaria]  
-INNER JOIN [Ryba] ON [Obsah_akvaria].[Id_Ryba] = [Ryba].[Ryba_nazev]
-ORDER BY [Akvarium_nazev];
+INNER JOIN [Ryba] ON [Obsah_akvaria].[Id_Ryba] = [Ryba].[Id_Ryba]
+INNER JOIN [Akvarium] ON [Obsah_akvaria].[Id_akvarium] = [Akvarium].[Id_Akvarium];
+
+
+
+
