@@ -67,10 +67,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ZVERIMEXDataSet.Designer.cs">
+    <Compile Include="Zverimex_ADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ZVERIMEXDataSet.xsd</DependentUpon>
+      <DependentUpon>Zverimex_ADataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -79,26 +79,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ZVERIMEXDataSet.xsc">
-      <DependentUpon>ZVERIMEXDataSet.xsd</DependentUpon>
+    <None Include="Zverimex_ADataSet.xsc">
+      <DependentUpon>Zverimex_ADataSet.xsd</DependentUpon>
     </None>
-    <None Include="ZVERIMEXDataSet.xsd">
+    <None Include="Zverimex_ADataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ZVERIMEXDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>Zverimex_ADataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ZVERIMEXDataSet.xss">
-      <DependentUpon>ZVERIMEXDataSet.xsd</DependentUpon>
+    <None Include="Zverimex_ADataSet.xss">
+      <DependentUpon>Zverimex_ADataSet.xsd</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ZVERIMEX.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ZVERIMEX_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ZVERIMEX.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

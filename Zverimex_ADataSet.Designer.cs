@@ -20,17 +20,17 @@ namespace Akvarium {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ZVERIMEXDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Zverimex_ADataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ZVERIMEXDataSet : global::System.Data.DataSet {
+    public partial class Zverimex_ADataSet : global::System.Data.DataSet {
         
         private AkvariumDataTable tableAkvarium;
         
+        private Obsah_akvariaDataTable tableObsah_akvaria;
+        
         private RybaDataTable tableRyba;
         
-        private Ryba_Akvarium_ZakaznikDataTable tableRyba_Akvarium_Zakaznik;
-        
-        private VztahyDataTable tableVztahy;
+        private VztahDataTable tableVztah;
         
         private ZakaznikDataTable tableZakaznik;
         
@@ -38,7 +38,7 @@ namespace Akvarium {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ZVERIMEXDataSet() {
+        public Zverimex_ADataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +49,7 @@ namespace Akvarium {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ZVERIMEXDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Zverimex_ADataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -65,14 +65,14 @@ namespace Akvarium {
                 if ((ds.Tables["Akvarium"] != null)) {
                     base.Tables.Add(new AkvariumDataTable(ds.Tables["Akvarium"]));
                 }
+                if ((ds.Tables["Obsah_akvaria"] != null)) {
+                    base.Tables.Add(new Obsah_akvariaDataTable(ds.Tables["Obsah_akvaria"]));
+                }
                 if ((ds.Tables["Ryba"] != null)) {
                     base.Tables.Add(new RybaDataTable(ds.Tables["Ryba"]));
                 }
-                if ((ds.Tables["Ryba_Akvarium_Zakaznik"] != null)) {
-                    base.Tables.Add(new Ryba_Akvarium_ZakaznikDataTable(ds.Tables["Ryba_Akvarium_Zakaznik"]));
-                }
-                if ((ds.Tables["Vztahy"] != null)) {
-                    base.Tables.Add(new VztahyDataTable(ds.Tables["Vztahy"]));
+                if ((ds.Tables["Vztah"] != null)) {
+                    base.Tables.Add(new VztahDataTable(ds.Tables["Vztah"]));
                 }
                 if ((ds.Tables["Zakaznik"] != null)) {
                     base.Tables.Add(new ZakaznikDataTable(ds.Tables["Zakaznik"]));
@@ -109,6 +109,16 @@ namespace Akvarium {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Obsah_akvariaDataTable Obsah_akvaria {
+            get {
+                return this.tableObsah_akvaria;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public RybaDataTable Ryba {
             get {
                 return this.tableRyba;
@@ -119,19 +129,9 @@ namespace Akvarium {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Ryba_Akvarium_ZakaznikDataTable Ryba_Akvarium_Zakaznik {
+        public VztahDataTable Vztah {
             get {
-                return this.tableRyba_Akvarium_Zakaznik;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VztahyDataTable Vztahy {
-            get {
-                return this.tableVztahy;
+                return this.tableVztah;
             }
         }
         
@@ -187,7 +187,7 @@ namespace Akvarium {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ZVERIMEXDataSet cln = ((ZVERIMEXDataSet)(base.Clone()));
+            Zverimex_ADataSet cln = ((Zverimex_ADataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -215,14 +215,14 @@ namespace Akvarium {
                 if ((ds.Tables["Akvarium"] != null)) {
                     base.Tables.Add(new AkvariumDataTable(ds.Tables["Akvarium"]));
                 }
+                if ((ds.Tables["Obsah_akvaria"] != null)) {
+                    base.Tables.Add(new Obsah_akvariaDataTable(ds.Tables["Obsah_akvaria"]));
+                }
                 if ((ds.Tables["Ryba"] != null)) {
                     base.Tables.Add(new RybaDataTable(ds.Tables["Ryba"]));
                 }
-                if ((ds.Tables["Ryba_Akvarium_Zakaznik"] != null)) {
-                    base.Tables.Add(new Ryba_Akvarium_ZakaznikDataTable(ds.Tables["Ryba_Akvarium_Zakaznik"]));
-                }
-                if ((ds.Tables["Vztahy"] != null)) {
-                    base.Tables.Add(new VztahyDataTable(ds.Tables["Vztahy"]));
+                if ((ds.Tables["Vztah"] != null)) {
+                    base.Tables.Add(new VztahDataTable(ds.Tables["Vztah"]));
                 }
                 if ((ds.Tables["Zakaznik"] != null)) {
                     base.Tables.Add(new ZakaznikDataTable(ds.Tables["Zakaznik"]));
@@ -266,22 +266,22 @@ namespace Akvarium {
                     this.tableAkvarium.InitVars();
                 }
             }
+            this.tableObsah_akvaria = ((Obsah_akvariaDataTable)(base.Tables["Obsah_akvaria"]));
+            if ((initTable == true)) {
+                if ((this.tableObsah_akvaria != null)) {
+                    this.tableObsah_akvaria.InitVars();
+                }
+            }
             this.tableRyba = ((RybaDataTable)(base.Tables["Ryba"]));
             if ((initTable == true)) {
                 if ((this.tableRyba != null)) {
                     this.tableRyba.InitVars();
                 }
             }
-            this.tableRyba_Akvarium_Zakaznik = ((Ryba_Akvarium_ZakaznikDataTable)(base.Tables["Ryba_Akvarium_Zakaznik"]));
+            this.tableVztah = ((VztahDataTable)(base.Tables["Vztah"]));
             if ((initTable == true)) {
-                if ((this.tableRyba_Akvarium_Zakaznik != null)) {
-                    this.tableRyba_Akvarium_Zakaznik.InitVars();
-                }
-            }
-            this.tableVztahy = ((VztahyDataTable)(base.Tables["Vztahy"]));
-            if ((initTable == true)) {
-                if ((this.tableVztahy != null)) {
-                    this.tableVztahy.InitVars();
+                if ((this.tableVztah != null)) {
+                    this.tableVztah.InitVars();
                 }
             }
             this.tableZakaznik = ((ZakaznikDataTable)(base.Tables["Zakaznik"]));
@@ -295,19 +295,19 @@ namespace Akvarium {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ZVERIMEXDataSet";
+            this.DataSetName = "Zverimex_ADataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ZVERIMEXDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Zverimex_ADataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAkvarium = new AkvariumDataTable();
             base.Tables.Add(this.tableAkvarium);
+            this.tableObsah_akvaria = new Obsah_akvariaDataTable();
+            base.Tables.Add(this.tableObsah_akvaria);
             this.tableRyba = new RybaDataTable();
             base.Tables.Add(this.tableRyba);
-            this.tableRyba_Akvarium_Zakaznik = new Ryba_Akvarium_ZakaznikDataTable();
-            base.Tables.Add(this.tableRyba_Akvarium_Zakaznik);
-            this.tableVztahy = new VztahyDataTable();
-            base.Tables.Add(this.tableVztahy);
+            this.tableVztah = new VztahDataTable();
+            base.Tables.Add(this.tableVztah);
             this.tableZakaznik = new ZakaznikDataTable();
             base.Tables.Add(this.tableZakaznik);
         }
@@ -320,19 +320,19 @@ namespace Akvarium {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeObsah_akvaria() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeRyba() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeRyba_Akvarium_Zakaznik() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeVztahy() {
+        private bool ShouldSerializeVztah() {
             return false;
         }
         
@@ -353,7 +353,7 @@ namespace Akvarium {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
+            Zverimex_ADataSet ds = new Zverimex_ADataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -401,13 +401,13 @@ namespace Akvarium {
         public delegate void AkvariumRowChangeEventHandler(object sender, AkvariumRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Obsah_akvariaRowChangeEventHandler(object sender, Obsah_akvariaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void RybaRowChangeEventHandler(object sender, RybaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void Ryba_Akvarium_ZakaznikRowChangeEventHandler(object sender, Ryba_Akvarium_ZakaznikRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void VztahyRowChangeEventHandler(object sender, VztahyRowChangeEvent e);
+        public delegate void VztahRowChangeEventHandler(object sender, VztahRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ZakaznikRowChangeEventHandler(object sender, ZakaznikRowChangeEvent e);
@@ -421,13 +421,13 @@ namespace Akvarium {
             
             private global::System.Data.DataColumn columnId_Akvarium;
             
-            private global::System.Data.DataColumn columnNazev_akvarium;
+            private global::System.Data.DataColumn columnAkvarium_nazev;
             
-            private global::System.Data.DataColumn columnPh;
+            private global::System.Data.DataColumn columnAkvarium_ph;
             
             private global::System.Data.DataColumn columnDatum_vytvoreni;
             
-            private global::System.Data.DataColumn columnId_Zakaznik;
+            private global::System.Data.DataColumn columnId_zakaznik;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -472,17 +472,17 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nazev_akvariumColumn {
+            public global::System.Data.DataColumn Akvarium_nazevColumn {
                 get {
-                    return this.columnNazev_akvarium;
+                    return this.columnAkvarium_nazev;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PhColumn {
+            public global::System.Data.DataColumn Akvarium_phColumn {
                 get {
-                    return this.columnPh;
+                    return this.columnAkvarium_ph;
                 }
             }
             
@@ -496,9 +496,9 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_ZakaznikColumn {
+            public global::System.Data.DataColumn Id_zakaznikColumn {
                 get {
-                    return this.columnId_Zakaznik;
+                    return this.columnId_zakaznik;
                 }
             }
             
@@ -539,14 +539,14 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AkvariumRow AddAkvariumRow(string Nazev_akvarium, int Ph, System.DateTime Datum_vytvoreni, int Id_Zakaznik) {
+            public AkvariumRow AddAkvariumRow(string Akvarium_nazev, string Akvarium_ph, System.DateTime Datum_vytvoreni, int Id_zakaznik) {
                 AkvariumRow rowAkvariumRow = ((AkvariumRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nazev_akvarium,
-                        Ph,
+                        Akvarium_nazev,
+                        Akvarium_ph,
                         Datum_vytvoreni,
-                        Id_Zakaznik};
+                        Id_zakaznik};
                 rowAkvariumRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAkvariumRow);
                 return rowAkvariumRow;
@@ -577,10 +577,10 @@ namespace Akvarium {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId_Akvarium = base.Columns["Id_Akvarium"];
-                this.columnNazev_akvarium = base.Columns["Nazev_akvarium"];
-                this.columnPh = base.Columns["Ph"];
+                this.columnAkvarium_nazev = base.Columns["Akvarium_nazev"];
+                this.columnAkvarium_ph = base.Columns["Akvarium_ph"];
                 this.columnDatum_vytvoreni = base.Columns["Datum_vytvoreni"];
-                this.columnId_Zakaznik = base.Columns["Id_Zakaznik"];
+                this.columnId_zakaznik = base.Columns["Id_zakaznik"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -588,14 +588,14 @@ namespace Akvarium {
             private void InitClass() {
                 this.columnId_Akvarium = new global::System.Data.DataColumn("Id_Akvarium", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_Akvarium);
-                this.columnNazev_akvarium = new global::System.Data.DataColumn("Nazev_akvarium", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNazev_akvarium);
-                this.columnPh = new global::System.Data.DataColumn("Ph", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPh);
+                this.columnAkvarium_nazev = new global::System.Data.DataColumn("Akvarium_nazev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAkvarium_nazev);
+                this.columnAkvarium_ph = new global::System.Data.DataColumn("Akvarium_ph", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAkvarium_ph);
                 this.columnDatum_vytvoreni = new global::System.Data.DataColumn("Datum_vytvoreni", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatum_vytvoreni);
-                this.columnId_Zakaznik = new global::System.Data.DataColumn("Id_Zakaznik", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Zakaznik);
+                this.columnId_zakaznik = new global::System.Data.DataColumn("Id_zakaznik", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_zakaznik);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Akvarium}, true));
                 this.columnId_Akvarium.AutoIncrement = true;
@@ -604,7 +604,8 @@ namespace Akvarium {
                 this.columnId_Akvarium.AllowDBNull = false;
                 this.columnId_Akvarium.ReadOnly = true;
                 this.columnId_Akvarium.Unique = true;
-                this.columnNazev_akvarium.MaxLength = 50;
+                this.columnAkvarium_nazev.MaxLength = 50;
+                this.columnAkvarium_ph.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -672,7 +673,7 @@ namespace Akvarium {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
+                Zverimex_ADataSet ds = new Zverimex_ADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -736,17 +737,349 @@ namespace Akvarium {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Obsah_akvariaDataTable : global::System.Data.TypedTableBase<Obsah_akvariaRow> {
+            
+            private global::System.Data.DataColumn columnId_Ryba;
+            
+            private global::System.Data.DataColumn columnId_Akvarium;
+            
+            private global::System.Data.DataColumn columnId_Zakaznik;
+            
+            private global::System.Data.DataColumn columnDatum_pridani;
+            
+            private global::System.Data.DataColumn columnDatum_odebrani;
+            
+            private global::System.Data.DataColumn columnPocet;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaDataTable() {
+                this.TableName = "Obsah_akvaria";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Obsah_akvariaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Obsah_akvariaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Id_RybaColumn {
+                get {
+                    return this.columnId_Ryba;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Id_AkvariumColumn {
+                get {
+                    return this.columnId_Akvarium;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Id_ZakaznikColumn {
+                get {
+                    return this.columnId_Zakaznik;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Datum_pridaniColumn {
+                get {
+                    return this.columnDatum_pridani;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Datum_odebraniColumn {
+                get {
+                    return this.columnDatum_odebrani;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PocetColumn {
+                get {
+                    return this.columnPocet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRow this[int index] {
+                get {
+                    return ((Obsah_akvariaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Obsah_akvariaRowChangeEventHandler Obsah_akvariaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Obsah_akvariaRowChangeEventHandler Obsah_akvariaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Obsah_akvariaRowChangeEventHandler Obsah_akvariaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Obsah_akvariaRowChangeEventHandler Obsah_akvariaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddObsah_akvariaRow(Obsah_akvariaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRow AddObsah_akvariaRow(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, System.DateTime Datum_odebrani, int Pocet) {
+                Obsah_akvariaRow rowObsah_akvariaRow = ((Obsah_akvariaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Id_Ryba,
+                        Id_Akvarium,
+                        Id_Zakaznik,
+                        Datum_pridani,
+                        Datum_odebrani,
+                        Pocet};
+                rowObsah_akvariaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowObsah_akvariaRow);
+                return rowObsah_akvariaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRow FindById_Ryba(int Id_Ryba) {
+                return ((Obsah_akvariaRow)(this.Rows.Find(new object[] {
+                            Id_Ryba})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Obsah_akvariaDataTable cln = ((Obsah_akvariaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Obsah_akvariaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnId_Ryba = base.Columns["Id_Ryba"];
+                this.columnId_Akvarium = base.Columns["Id_Akvarium"];
+                this.columnId_Zakaznik = base.Columns["Id_Zakaznik"];
+                this.columnDatum_pridani = base.Columns["Datum_pridani"];
+                this.columnDatum_odebrani = base.Columns["Datum_odebrani"];
+                this.columnPocet = base.Columns["Pocet"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnId_Ryba = new global::System.Data.DataColumn("Id_Ryba", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Ryba);
+                this.columnId_Akvarium = new global::System.Data.DataColumn("Id_Akvarium", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Akvarium);
+                this.columnId_Zakaznik = new global::System.Data.DataColumn("Id_Zakaznik", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Zakaznik);
+                this.columnDatum_pridani = new global::System.Data.DataColumn("Datum_pridani", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum_pridani);
+                this.columnDatum_odebrani = new global::System.Data.DataColumn("Datum_odebrani", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum_odebrani);
+                this.columnPocet = new global::System.Data.DataColumn("Pocet", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPocet);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId_Ryba}, true));
+                this.columnId_Ryba.AllowDBNull = false;
+                this.columnId_Ryba.Unique = true;
+                this.columnId_Akvarium.AllowDBNull = false;
+                this.columnId_Zakaznik.AllowDBNull = false;
+                this.columnDatum_pridani.AllowDBNull = false;
+                this.columnPocet.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRow NewObsah_akvariaRow() {
+                return ((Obsah_akvariaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Obsah_akvariaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Obsah_akvariaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Obsah_akvariaRowChanged != null)) {
+                    this.Obsah_akvariaRowChanged(this, new Obsah_akvariaRowChangeEvent(((Obsah_akvariaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Obsah_akvariaRowChanging != null)) {
+                    this.Obsah_akvariaRowChanging(this, new Obsah_akvariaRowChangeEvent(((Obsah_akvariaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Obsah_akvariaRowDeleted != null)) {
+                    this.Obsah_akvariaRowDeleted(this, new Obsah_akvariaRowChangeEvent(((Obsah_akvariaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Obsah_akvariaRowDeleting != null)) {
+                    this.Obsah_akvariaRowDeleting(this, new Obsah_akvariaRowChangeEvent(((Obsah_akvariaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveObsah_akvariaRow(Obsah_akvariaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Zverimex_ADataSet ds = new Zverimex_ADataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Obsah_akvariaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class RybaDataTable : global::System.Data.TypedTableBase<RybaRow> {
             
             private global::System.Data.DataColumn columnId_Ryba;
             
-            private global::System.Data.DataColumn columnNazev;
+            private global::System.Data.DataColumn columnRyba_nazev;
             
-            private global::System.Data.DataColumn columnPH_min;
+            private global::System.Data.DataColumn columnRyba_ph_min;
             
-            private global::System.Data.DataColumn columnPH_max;
+            private global::System.Data.DataColumn columnRyba_ph_max;
             
-            private global::System.Data.DataColumn columnZivotnost;
+            private global::System.Data.DataColumn columnRyba_zivotnost;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -791,33 +1124,33 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NazevColumn {
+            public global::System.Data.DataColumn Ryba_nazevColumn {
                 get {
-                    return this.columnNazev;
+                    return this.columnRyba_nazev;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PH_minColumn {
+            public global::System.Data.DataColumn Ryba_ph_minColumn {
                 get {
-                    return this.columnPH_min;
+                    return this.columnRyba_ph_min;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PH_maxColumn {
+            public global::System.Data.DataColumn Ryba_ph_maxColumn {
                 get {
-                    return this.columnPH_max;
+                    return this.columnRyba_ph_max;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ZivotnostColumn {
+            public global::System.Data.DataColumn Ryba_zivotnostColumn {
                 get {
-                    return this.columnZivotnost;
+                    return this.columnRyba_zivotnost;
                 }
             }
             
@@ -858,14 +1191,14 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RybaRow AddRybaRow(string Nazev, double PH_min, double PH_max, int Zivotnost) {
+            public RybaRow AddRybaRow(string Ryba_nazev, int Ryba_ph_min, int Ryba_ph_max, int Ryba_zivotnost) {
                 RybaRow rowRybaRow = ((RybaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nazev,
-                        PH_min,
-                        PH_max,
-                        Zivotnost};
+                        Ryba_nazev,
+                        Ryba_ph_min,
+                        Ryba_ph_max,
+                        Ryba_zivotnost};
                 rowRybaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRybaRow);
                 return rowRybaRow;
@@ -896,10 +1229,10 @@ namespace Akvarium {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId_Ryba = base.Columns["Id_Ryba"];
-                this.columnNazev = base.Columns["Nazev"];
-                this.columnPH_min = base.Columns["PH_min"];
-                this.columnPH_max = base.Columns["PH_max"];
-                this.columnZivotnost = base.Columns["Zivotnost"];
+                this.columnRyba_nazev = base.Columns["Ryba_nazev"];
+                this.columnRyba_ph_min = base.Columns["Ryba_ph_min"];
+                this.columnRyba_ph_max = base.Columns["Ryba_ph_max"];
+                this.columnRyba_zivotnost = base.Columns["Ryba_zivotnost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -907,14 +1240,14 @@ namespace Akvarium {
             private void InitClass() {
                 this.columnId_Ryba = new global::System.Data.DataColumn("Id_Ryba", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_Ryba);
-                this.columnNazev = new global::System.Data.DataColumn("Nazev", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNazev);
-                this.columnPH_min = new global::System.Data.DataColumn("PH_min", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPH_min);
-                this.columnPH_max = new global::System.Data.DataColumn("PH_max", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPH_max);
-                this.columnZivotnost = new global::System.Data.DataColumn("Zivotnost", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZivotnost);
+                this.columnRyba_nazev = new global::System.Data.DataColumn("Ryba_nazev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRyba_nazev);
+                this.columnRyba_ph_min = new global::System.Data.DataColumn("Ryba_ph_min", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRyba_ph_min);
+                this.columnRyba_ph_max = new global::System.Data.DataColumn("Ryba_ph_max", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRyba_ph_max);
+                this.columnRyba_zivotnost = new global::System.Data.DataColumn("Ryba_zivotnost", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRyba_zivotnost);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Ryba}, true));
                 this.columnId_Ryba.AutoIncrement = true;
@@ -923,7 +1256,7 @@ namespace Akvarium {
                 this.columnId_Ryba.AllowDBNull = false;
                 this.columnId_Ryba.ReadOnly = true;
                 this.columnId_Ryba.Unique = true;
-                this.columnNazev.MaxLength = 50;
+                this.columnRyba_nazev.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -991,7 +1324,7 @@ namespace Akvarium {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
+                Zverimex_ADataSet ds = new Zverimex_ADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1055,351 +1388,20 @@ namespace Akvarium {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Ryba_Akvarium_ZakaznikDataTable : global::System.Data.TypedTableBase<Ryba_Akvarium_ZakaznikRow> {
-            
-            private global::System.Data.DataColumn columnId_Ryba;
-            
-            private global::System.Data.DataColumn columnId_Akvarium;
-            
-            private global::System.Data.DataColumn columnId_Zakaznik;
-            
-            private global::System.Data.DataColumn columnDatum_pridani;
-            
-            private global::System.Data.DataColumn columnDatum_odebrani;
-            
-            private global::System.Data.DataColumn columnPocet;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikDataTable() {
-                this.TableName = "Ryba_Akvarium_Zakaznik";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Ryba_Akvarium_ZakaznikDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected Ryba_Akvarium_ZakaznikDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_RybaColumn {
-                get {
-                    return this.columnId_Ryba;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_AkvariumColumn {
-                get {
-                    return this.columnId_Akvarium;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_ZakaznikColumn {
-                get {
-                    return this.columnId_Zakaznik;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Datum_pridaniColumn {
-                get {
-                    return this.columnDatum_pridani;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Datum_odebraniColumn {
-                get {
-                    return this.columnDatum_odebrani;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PocetColumn {
-                get {
-                    return this.columnPocet;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRow this[int index] {
-                get {
-                    return ((Ryba_Akvarium_ZakaznikRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Ryba_Akvarium_ZakaznikRowChangeEventHandler Ryba_Akvarium_ZakaznikRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Ryba_Akvarium_ZakaznikRowChangeEventHandler Ryba_Akvarium_ZakaznikRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Ryba_Akvarium_ZakaznikRowChangeEventHandler Ryba_Akvarium_ZakaznikRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Ryba_Akvarium_ZakaznikRowChangeEventHandler Ryba_Akvarium_ZakaznikRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddRyba_Akvarium_ZakaznikRow(Ryba_Akvarium_ZakaznikRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRow AddRyba_Akvarium_ZakaznikRow(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, System.DateTime Datum_odebrani, int Pocet) {
-                Ryba_Akvarium_ZakaznikRow rowRyba_Akvarium_ZakaznikRow = ((Ryba_Akvarium_ZakaznikRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Id_Ryba,
-                        Id_Akvarium,
-                        Id_Zakaznik,
-                        Datum_pridani,
-                        Datum_odebrani,
-                        Pocet};
-                rowRyba_Akvarium_ZakaznikRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRyba_Akvarium_ZakaznikRow);
-                return rowRyba_Akvarium_ZakaznikRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRow FindById_Ryba(int Id_Ryba) {
-                return ((Ryba_Akvarium_ZakaznikRow)(this.Rows.Find(new object[] {
-                            Id_Ryba})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Ryba_Akvarium_ZakaznikDataTable cln = ((Ryba_Akvarium_ZakaznikDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Ryba_Akvarium_ZakaznikDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnId_Ryba = base.Columns["Id_Ryba"];
-                this.columnId_Akvarium = base.Columns["Id_Akvarium"];
-                this.columnId_Zakaznik = base.Columns["Id_Zakaznik"];
-                this.columnDatum_pridani = base.Columns["Datum_pridani"];
-                this.columnDatum_odebrani = base.Columns["Datum_odebrani"];
-                this.columnPocet = base.Columns["Pocet"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnId_Ryba = new global::System.Data.DataColumn("Id_Ryba", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Ryba);
-                this.columnId_Akvarium = new global::System.Data.DataColumn("Id_Akvarium", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Akvarium);
-                this.columnId_Zakaznik = new global::System.Data.DataColumn("Id_Zakaznik", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Zakaznik);
-                this.columnDatum_pridani = new global::System.Data.DataColumn("Datum_pridani", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum_pridani);
-                this.columnDatum_odebrani = new global::System.Data.DataColumn("Datum_odebrani", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum_odebrani);
-                this.columnPocet = new global::System.Data.DataColumn("Pocet", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPocet);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId_Ryba}, true));
-                this.columnId_Ryba.AllowDBNull = false;
-                this.columnId_Ryba.Unique = true;
-                this.columnId_Akvarium.AllowDBNull = false;
-                this.columnId_Zakaznik.AllowDBNull = false;
-                this.columnDatum_pridani.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRow NewRyba_Akvarium_ZakaznikRow() {
-                return ((Ryba_Akvarium_ZakaznikRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Ryba_Akvarium_ZakaznikRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Ryba_Akvarium_ZakaznikRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Ryba_Akvarium_ZakaznikRowChanged != null)) {
-                    this.Ryba_Akvarium_ZakaznikRowChanged(this, new Ryba_Akvarium_ZakaznikRowChangeEvent(((Ryba_Akvarium_ZakaznikRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Ryba_Akvarium_ZakaznikRowChanging != null)) {
-                    this.Ryba_Akvarium_ZakaznikRowChanging(this, new Ryba_Akvarium_ZakaznikRowChangeEvent(((Ryba_Akvarium_ZakaznikRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Ryba_Akvarium_ZakaznikRowDeleted != null)) {
-                    this.Ryba_Akvarium_ZakaznikRowDeleted(this, new Ryba_Akvarium_ZakaznikRowChangeEvent(((Ryba_Akvarium_ZakaznikRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Ryba_Akvarium_ZakaznikRowDeleting != null)) {
-                    this.Ryba_Akvarium_ZakaznikRowDeleting(this, new Ryba_Akvarium_ZakaznikRowChangeEvent(((Ryba_Akvarium_ZakaznikRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveRyba_Akvarium_ZakaznikRow(Ryba_Akvarium_ZakaznikRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Ryba_Akvarium_ZakaznikDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VztahyDataTable : global::System.Data.TypedTableBase<VztahyRow> {
+        public partial class VztahDataTable : global::System.Data.TypedTableBase<VztahRow> {
             
             private global::System.Data.DataColumn columnId_vztah;
             
-            private global::System.Data.DataColumn columnId_Ryba_1;
+            private global::System.Data.DataColumn columnId_ryba_1;
             
-            private global::System.Data.DataColumn columnId_Ryba_2;
+            private global::System.Data.DataColumn columnId_ryba_2;
             
             private global::System.Data.DataColumn columnVztah;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyDataTable() {
-                this.TableName = "Vztahy";
+            public VztahDataTable() {
+                this.TableName = "Vztah";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1407,7 +1409,7 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VztahyDataTable(global::System.Data.DataTable table) {
+            internal VztahDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1424,7 +1426,7 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected VztahyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected VztahDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1439,17 +1441,17 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_Ryba_1Column {
+            public global::System.Data.DataColumn Id_ryba_1Column {
                 get {
-                    return this.columnId_Ryba_1;
+                    return this.columnId_ryba_1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_Ryba_2Column {
+            public global::System.Data.DataColumn Id_ryba_2Column {
                 get {
-                    return this.columnId_Ryba_2;
+                    return this.columnId_ryba_2;
                 }
             }
             
@@ -1472,55 +1474,55 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRow this[int index] {
+            public VztahRow this[int index] {
                 get {
-                    return ((VztahyRow)(this.Rows[index]));
+                    return ((VztahRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VztahyRowChangeEventHandler VztahyRowChanging;
+            public event VztahRowChangeEventHandler VztahRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VztahyRowChangeEventHandler VztahyRowChanged;
+            public event VztahRowChangeEventHandler VztahRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VztahyRowChangeEventHandler VztahyRowDeleting;
+            public event VztahRowChangeEventHandler VztahRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VztahyRowChangeEventHandler VztahyRowDeleted;
+            public event VztahRowChangeEventHandler VztahRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddVztahyRow(VztahyRow row) {
+            public void AddVztahRow(VztahRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRow AddVztahyRow(int Id_Ryba_1, int Id_Ryba_2, bool Vztah) {
-                VztahyRow rowVztahyRow = ((VztahyRow)(this.NewRow()));
+            public VztahRow AddVztahRow(int Id_ryba_1, int Id_ryba_2, bool Vztah) {
+                VztahRow rowVztahRow = ((VztahRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Id_Ryba_1,
-                        Id_Ryba_2,
+                        Id_ryba_1,
+                        Id_ryba_2,
                         Vztah};
-                rowVztahyRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVztahyRow);
-                return rowVztahyRow;
+                rowVztahRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVztahRow);
+                return rowVztahRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRow FindById_vztah(int Id_vztah) {
-                return ((VztahyRow)(this.Rows.Find(new object[] {
+            public VztahRow FindById_vztah(int Id_vztah) {
+                return ((VztahRow)(this.Rows.Find(new object[] {
                             Id_vztah})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VztahyDataTable cln = ((VztahyDataTable)(base.Clone()));
+                VztahDataTable cln = ((VztahDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1528,15 +1530,15 @@ namespace Akvarium {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VztahyDataTable();
+                return new VztahDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId_vztah = base.Columns["Id_vztah"];
-                this.columnId_Ryba_1 = base.Columns["Id_Ryba_1"];
-                this.columnId_Ryba_2 = base.Columns["Id_Ryba_2"];
+                this.columnId_ryba_1 = base.Columns["Id_ryba_1"];
+                this.columnId_ryba_2 = base.Columns["Id_ryba_2"];
                 this.columnVztah = base.Columns["Vztah"];
             }
             
@@ -1545,10 +1547,10 @@ namespace Akvarium {
             private void InitClass() {
                 this.columnId_vztah = new global::System.Data.DataColumn("Id_vztah", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_vztah);
-                this.columnId_Ryba_1 = new global::System.Data.DataColumn("Id_Ryba_1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Ryba_1);
-                this.columnId_Ryba_2 = new global::System.Data.DataColumn("Id_Ryba_2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Ryba_2);
+                this.columnId_ryba_1 = new global::System.Data.DataColumn("Id_ryba_1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_ryba_1);
+                this.columnId_ryba_2 = new global::System.Data.DataColumn("Id_ryba_2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_ryba_2);
                 this.columnVztah = new global::System.Data.DataColumn("Vztah", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVztah);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1559,34 +1561,32 @@ namespace Akvarium {
                 this.columnId_vztah.AllowDBNull = false;
                 this.columnId_vztah.ReadOnly = true;
                 this.columnId_vztah.Unique = true;
-                this.columnId_Ryba_1.AllowDBNull = false;
-                this.columnId_Ryba_2.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRow NewVztahyRow() {
-                return ((VztahyRow)(this.NewRow()));
+            public VztahRow NewVztahRow() {
+                return ((VztahRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VztahyRow(builder);
+                return new VztahRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VztahyRow);
+                return typeof(VztahRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VztahyRowChanged != null)) {
-                    this.VztahyRowChanged(this, new VztahyRowChangeEvent(((VztahyRow)(e.Row)), e.Action));
+                if ((this.VztahRowChanged != null)) {
+                    this.VztahRowChanged(this, new VztahRowChangeEvent(((VztahRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1594,8 +1594,8 @@ namespace Akvarium {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VztahyRowChanging != null)) {
-                    this.VztahyRowChanging(this, new VztahyRowChangeEvent(((VztahyRow)(e.Row)), e.Action));
+                if ((this.VztahRowChanging != null)) {
+                    this.VztahRowChanging(this, new VztahRowChangeEvent(((VztahRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1603,8 +1603,8 @@ namespace Akvarium {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VztahyRowDeleted != null)) {
-                    this.VztahyRowDeleted(this, new VztahyRowChangeEvent(((VztahyRow)(e.Row)), e.Action));
+                if ((this.VztahRowDeleted != null)) {
+                    this.VztahRowDeleted(this, new VztahRowChangeEvent(((VztahRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1612,14 +1612,14 @@ namespace Akvarium {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VztahyRowDeleting != null)) {
-                    this.VztahyRowDeleting(this, new VztahyRowChangeEvent(((VztahyRow)(e.Row)), e.Action));
+                if ((this.VztahRowDeleting != null)) {
+                    this.VztahRowDeleting(this, new VztahRowChangeEvent(((VztahRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveVztahyRow(VztahyRow row) {
+            public void RemoveVztahRow(VztahRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1628,7 +1628,7 @@ namespace Akvarium {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
+                Zverimex_ADataSet ds = new Zverimex_ADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1646,7 +1646,7 @@ namespace Akvarium {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VztahyDataTable";
+                attribute2.FixedValue = "VztahDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1814,7 +1814,7 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ZakaznikRow AddZakaznikRow(string Jmeno, string Prijmeni, string Adresa, string Kontakt) {
+            public ZakaznikRow AddZakaznikRow(string Jmeno, string Prijmeni, string Adresa, int Kontakt) {
                 ZakaznikRow rowZakaznikRow = ((ZakaznikRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1869,7 +1869,7 @@ namespace Akvarium {
                 base.Columns.Add(this.columnPrijmeni);
                 this.columnAdresa = new global::System.Data.DataColumn("Adresa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdresa);
-                this.columnKontakt = new global::System.Data.DataColumn("Kontakt", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnKontakt = new global::System.Data.DataColumn("Kontakt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKontakt);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Zakaznik}, true));
@@ -1881,8 +1881,7 @@ namespace Akvarium {
                 this.columnId_Zakaznik.Unique = true;
                 this.columnJmeno.MaxLength = 50;
                 this.columnPrijmeni.MaxLength = 50;
-                this.columnAdresa.MaxLength = 50;
-                this.columnKontakt.MaxLength = 50;
+                this.columnAdresa.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1950,7 +1949,7 @@ namespace Akvarium {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZVERIMEXDataSet ds = new ZVERIMEXDataSet();
+                Zverimex_ADataSet ds = new Zverimex_ADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2036,33 +2035,33 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nazev_akvarium {
+            public string Akvarium_nazev {
                 get {
                     try {
-                        return ((string)(this[this.tableAkvarium.Nazev_akvariumColumn]));
+                        return ((string)(this[this.tableAkvarium.Akvarium_nazevColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nazev_akvarium\' in table \'Akvarium\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Akvarium_nazev\' in table \'Akvarium\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAkvarium.Nazev_akvariumColumn] = value;
+                    this[this.tableAkvarium.Akvarium_nazevColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Ph {
+            public string Akvarium_ph {
                 get {
                     try {
-                        return ((int)(this[this.tableAkvarium.PhColumn]));
+                        return ((string)(this[this.tableAkvarium.Akvarium_phColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ph\' in table \'Akvarium\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Akvarium_ph\' in table \'Akvarium\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAkvarium.PhColumn] = value;
+                    this[this.tableAkvarium.Akvarium_phColumn] = value;
                 }
             }
             
@@ -2084,42 +2083,42 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Zakaznik {
+            public int Id_zakaznik {
                 get {
                     try {
-                        return ((int)(this[this.tableAkvarium.Id_ZakaznikColumn]));
+                        return ((int)(this[this.tableAkvarium.Id_zakaznikColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Id_Zakaznik\' in table \'Akvarium\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id_zakaznik\' in table \'Akvarium\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAkvarium.Id_ZakaznikColumn] = value;
+                    this[this.tableAkvarium.Id_zakaznikColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNazev_akvariumNull() {
-                return this.IsNull(this.tableAkvarium.Nazev_akvariumColumn);
+            public bool IsAkvarium_nazevNull() {
+                return this.IsNull(this.tableAkvarium.Akvarium_nazevColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNazev_akvariumNull() {
-                this[this.tableAkvarium.Nazev_akvariumColumn] = global::System.Convert.DBNull;
+            public void SetAkvarium_nazevNull() {
+                this[this.tableAkvarium.Akvarium_nazevColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPhNull() {
-                return this.IsNull(this.tableAkvarium.PhColumn);
+            public bool IsAkvarium_phNull() {
+                return this.IsNull(this.tableAkvarium.Akvarium_phColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPhNull() {
-                this[this.tableAkvarium.PhColumn] = global::System.Convert.DBNull;
+            public void SetAkvarium_phNull() {
+                this[this.tableAkvarium.Akvarium_phColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2136,14 +2135,112 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsId_ZakaznikNull() {
-                return this.IsNull(this.tableAkvarium.Id_ZakaznikColumn);
+            public bool IsId_zakaznikNull() {
+                return this.IsNull(this.tableAkvarium.Id_zakaznikColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetId_ZakaznikNull() {
-                this[this.tableAkvarium.Id_ZakaznikColumn] = global::System.Convert.DBNull;
+            public void SetId_zakaznikNull() {
+                this[this.tableAkvarium.Id_zakaznikColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Obsah_akvariaRow : global::System.Data.DataRow {
+            
+            private Obsah_akvariaDataTable tableObsah_akvaria;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Obsah_akvariaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableObsah_akvaria = ((Obsah_akvariaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Id_Ryba {
+                get {
+                    return ((int)(this[this.tableObsah_akvaria.Id_RybaColumn]));
+                }
+                set {
+                    this[this.tableObsah_akvaria.Id_RybaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Id_Akvarium {
+                get {
+                    return ((int)(this[this.tableObsah_akvaria.Id_AkvariumColumn]));
+                }
+                set {
+                    this[this.tableObsah_akvaria.Id_AkvariumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Id_Zakaznik {
+                get {
+                    return ((int)(this[this.tableObsah_akvaria.Id_ZakaznikColumn]));
+                }
+                set {
+                    this[this.tableObsah_akvaria.Id_ZakaznikColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Datum_pridani {
+                get {
+                    return ((global::System.DateTime)(this[this.tableObsah_akvaria.Datum_pridaniColumn]));
+                }
+                set {
+                    this[this.tableObsah_akvaria.Datum_pridaniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Datum_odebrani {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableObsah_akvaria.Datum_odebraniColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum_odebrani\' in table \'Obsah_akvaria\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableObsah_akvaria.Datum_odebraniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Pocet {
+                get {
+                    return ((int)(this[this.tableObsah_akvaria.PocetColumn]));
+                }
+                set {
+                    this[this.tableObsah_akvaria.PocetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDatum_odebraniNull() {
+                return this.IsNull(this.tableObsah_akvaria.Datum_odebraniColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDatum_odebraniNull() {
+                this[this.tableObsah_akvaria.Datum_odebraniColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2174,277 +2271,171 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nazev {
+            public string Ryba_nazev {
                 get {
                     try {
-                        return ((string)(this[this.tableRyba.NazevColumn]));
+                        return ((string)(this[this.tableRyba.Ryba_nazevColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nazev\' in table \'Ryba\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ryba_nazev\' in table \'Ryba\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRyba.NazevColumn] = value;
+                    this[this.tableRyba.Ryba_nazevColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double PH_min {
+            public int Ryba_ph_min {
                 get {
                     try {
-                        return ((double)(this[this.tableRyba.PH_minColumn]));
+                        return ((int)(this[this.tableRyba.Ryba_ph_minColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PH_min\' in table \'Ryba\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ryba_ph_min\' in table \'Ryba\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRyba.PH_minColumn] = value;
+                    this[this.tableRyba.Ryba_ph_minColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double PH_max {
+            public int Ryba_ph_max {
                 get {
                     try {
-                        return ((double)(this[this.tableRyba.PH_maxColumn]));
+                        return ((int)(this[this.tableRyba.Ryba_ph_maxColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PH_max\' in table \'Ryba\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ryba_ph_max\' in table \'Ryba\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRyba.PH_maxColumn] = value;
+                    this[this.tableRyba.Ryba_ph_maxColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Zivotnost {
+            public int Ryba_zivotnost {
                 get {
                     try {
-                        return ((int)(this[this.tableRyba.ZivotnostColumn]));
+                        return ((int)(this[this.tableRyba.Ryba_zivotnostColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Zivotnost\' in table \'Ryba\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ryba_zivotnost\' in table \'Ryba\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRyba.ZivotnostColumn] = value;
+                    this[this.tableRyba.Ryba_zivotnostColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNazevNull() {
-                return this.IsNull(this.tableRyba.NazevColumn);
+            public bool IsRyba_nazevNull() {
+                return this.IsNull(this.tableRyba.Ryba_nazevColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNazevNull() {
-                this[this.tableRyba.NazevColumn] = global::System.Convert.DBNull;
+            public void SetRyba_nazevNull() {
+                this[this.tableRyba.Ryba_nazevColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPH_minNull() {
-                return this.IsNull(this.tableRyba.PH_minColumn);
+            public bool IsRyba_ph_minNull() {
+                return this.IsNull(this.tableRyba.Ryba_ph_minColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPH_minNull() {
-                this[this.tableRyba.PH_minColumn] = global::System.Convert.DBNull;
+            public void SetRyba_ph_minNull() {
+                this[this.tableRyba.Ryba_ph_minColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPH_maxNull() {
-                return this.IsNull(this.tableRyba.PH_maxColumn);
+            public bool IsRyba_ph_maxNull() {
+                return this.IsNull(this.tableRyba.Ryba_ph_maxColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPH_maxNull() {
-                this[this.tableRyba.PH_maxColumn] = global::System.Convert.DBNull;
+            public void SetRyba_ph_maxNull() {
+                this[this.tableRyba.Ryba_ph_maxColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsZivotnostNull() {
-                return this.IsNull(this.tableRyba.ZivotnostColumn);
+            public bool IsRyba_zivotnostNull() {
+                return this.IsNull(this.tableRyba.Ryba_zivotnostColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetZivotnostNull() {
-                this[this.tableRyba.ZivotnostColumn] = global::System.Convert.DBNull;
+            public void SetRyba_zivotnostNull() {
+                this[this.tableRyba.Ryba_zivotnostColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Ryba_Akvarium_ZakaznikRow : global::System.Data.DataRow {
+        public partial class VztahRow : global::System.Data.DataRow {
             
-            private Ryba_Akvarium_ZakaznikDataTable tableRyba_Akvarium_Zakaznik;
+            private VztahDataTable tableVztah;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Ryba_Akvarium_ZakaznikRow(global::System.Data.DataRowBuilder rb) : 
+            internal VztahRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableRyba_Akvarium_Zakaznik = ((Ryba_Akvarium_ZakaznikDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Ryba {
-                get {
-                    return ((int)(this[this.tableRyba_Akvarium_Zakaznik.Id_RybaColumn]));
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.Id_RybaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Akvarium {
-                get {
-                    return ((int)(this[this.tableRyba_Akvarium_Zakaznik.Id_AkvariumColumn]));
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.Id_AkvariumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Zakaznik {
-                get {
-                    return ((int)(this[this.tableRyba_Akvarium_Zakaznik.Id_ZakaznikColumn]));
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.Id_ZakaznikColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Datum_pridani {
-                get {
-                    return ((global::System.DateTime)(this[this.tableRyba_Akvarium_Zakaznik.Datum_pridaniColumn]));
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.Datum_pridaniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Datum_odebrani {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableRyba_Akvarium_Zakaznik.Datum_odebraniColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Datum_odebrani\' in table \'Ryba_Akvarium_Zakaznik\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.Datum_odebraniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Pocet {
-                get {
-                    try {
-                        return ((int)(this[this.tableRyba_Akvarium_Zakaznik.PocetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pocet\' in table \'Ryba_Akvarium_Zakaznik\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRyba_Akvarium_Zakaznik.PocetColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDatum_odebraniNull() {
-                return this.IsNull(this.tableRyba_Akvarium_Zakaznik.Datum_odebraniColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDatum_odebraniNull() {
-                this[this.tableRyba_Akvarium_Zakaznik.Datum_odebraniColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPocetNull() {
-                return this.IsNull(this.tableRyba_Akvarium_Zakaznik.PocetColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPocetNull() {
-                this[this.tableRyba_Akvarium_Zakaznik.PocetColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class VztahyRow : global::System.Data.DataRow {
-            
-            private VztahyDataTable tableVztahy;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VztahyRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableVztahy = ((VztahyDataTable)(this.Table));
+                this.tableVztah = ((VztahDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id_vztah {
                 get {
-                    return ((int)(this[this.tableVztahy.Id_vztahColumn]));
+                    return ((int)(this[this.tableVztah.Id_vztahColumn]));
                 }
                 set {
-                    this[this.tableVztahy.Id_vztahColumn] = value;
+                    this[this.tableVztah.Id_vztahColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Ryba_1 {
+            public int Id_ryba_1 {
                 get {
-                    return ((int)(this[this.tableVztahy.Id_Ryba_1Column]));
+                    try {
+                        return ((int)(this[this.tableVztah.Id_ryba_1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id_ryba_1\' in table \'Vztah\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableVztahy.Id_Ryba_1Column] = value;
+                    this[this.tableVztah.Id_ryba_1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Ryba_2 {
+            public int Id_ryba_2 {
                 get {
-                    return ((int)(this[this.tableVztahy.Id_Ryba_2Column]));
+                    try {
+                        return ((int)(this[this.tableVztah.Id_ryba_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id_ryba_2\' in table \'Vztah\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableVztahy.Id_Ryba_2Column] = value;
+                    this[this.tableVztah.Id_ryba_2Column] = value;
                 }
             }
             
@@ -2453,27 +2444,51 @@ namespace Akvarium {
             public bool Vztah {
                 get {
                     try {
-                        return ((bool)(this[this.tableVztahy.VztahColumn]));
+                        return ((bool)(this[this.tableVztah.VztahColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vztah\' in table \'Vztahy\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vztah\' in table \'Vztah\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVztahy.VztahColumn] = value;
+                    this[this.tableVztah.VztahColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsId_ryba_1Null() {
+                return this.IsNull(this.tableVztah.Id_ryba_1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetId_ryba_1Null() {
+                this[this.tableVztah.Id_ryba_1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsId_ryba_2Null() {
+                return this.IsNull(this.tableVztah.Id_ryba_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetId_ryba_2Null() {
+                this[this.tableVztah.Id_ryba_2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsVztahNull() {
-                return this.IsNull(this.tableVztahy.VztahColumn);
+                return this.IsNull(this.tableVztah.VztahColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetVztahNull() {
-                this[this.tableVztahy.VztahColumn] = global::System.Convert.DBNull;
+                this[this.tableVztah.VztahColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2552,10 +2567,10 @@ namespace Akvarium {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Kontakt {
+            public int Kontakt {
                 get {
                     try {
-                        return ((string)(this[this.tableZakaznik.KontaktColumn]));
+                        return ((int)(this[this.tableZakaznik.KontaktColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Kontakt\' in table \'Zakaznik\' is DBNull.", e);
@@ -2653,6 +2668,40 @@ namespace Akvarium {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Obsah_akvariaRowChangeEvent : global::System.EventArgs {
+            
+            private Obsah_akvariaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRowChangeEvent(Obsah_akvariaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Obsah_akvariaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public class RybaRowChangeEvent : global::System.EventArgs {
             
             private RybaRow eventRow;
@@ -2687,56 +2736,22 @@ namespace Akvarium {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class Ryba_Akvarium_ZakaznikRowChangeEvent : global::System.EventArgs {
+        public class VztahRowChangeEvent : global::System.EventArgs {
             
-            private Ryba_Akvarium_ZakaznikRow eventRow;
+            private VztahRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRowChangeEvent(Ryba_Akvarium_ZakaznikRow row, global::System.Data.DataRowAction action) {
+            public VztahRowChangeEvent(VztahRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Ryba_Akvarium_ZakaznikRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class VztahyRowChangeEvent : global::System.EventArgs {
-            
-            private VztahyRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRowChangeEvent(VztahyRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VztahyRow Row {
+            public VztahRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2786,7 +2801,7 @@ namespace Akvarium {
         }
     }
 }
-namespace Akvarium.ZVERIMEXDataSetTableAdapters {
+namespace Akvarium.Zverimex_ADataSetTableAdapters {
     
     
     /// <summary>
@@ -2911,51 +2926,51 @@ namespace Akvarium.ZVERIMEXDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Akvarium";
             tableMapping.ColumnMappings.Add("Id_Akvarium", "Id_Akvarium");
-            tableMapping.ColumnMappings.Add("Nazev_akvarium", "Nazev_akvarium");
-            tableMapping.ColumnMappings.Add("Ph", "Ph");
+            tableMapping.ColumnMappings.Add("Akvarium_nazev", "Akvarium_nazev");
+            tableMapping.ColumnMappings.Add("Akvarium_ph", "Akvarium_ph");
             tableMapping.ColumnMappings.Add("Datum_vytvoreni", "Datum_vytvoreni");
-            tableMapping.ColumnMappings.Add("Id_Zakaznik", "Id_Zakaznik");
+            tableMapping.ColumnMappings.Add("Id_zakaznik", "Id_zakaznik");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Akvarium] WHERE (([Id_Akvarium] = @Original_Id_Akvarium) AND ((@IsNull_Nazev_akvarium = 1 AND [Nazev_akvarium] IS NULL) OR ([Nazev_akvarium] = @Original_Nazev_akvarium)) AND ((@IsNull_Ph = 1 AND [Ph] IS NULL) OR ([Ph] = @Original_Ph)) AND ((@IsNull_Datum_vytvoreni = 1 AND [Datum_vytvoreni] IS NULL) OR ([Datum_vytvoreni] = @Original_Datum_vytvoreni)) AND ((@IsNull_Id_Zakaznik = 1 AND [Id_Zakaznik] IS NULL) OR ([Id_Zakaznik] = @Original_Id_Zakaznik)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Akvarium] WHERE (([Id_Akvarium] = @Original_Id_Akvarium) AND ((@IsNull_Akvarium_nazev = 1 AND [Akvarium_nazev] IS NULL) OR ([Akvarium_nazev] = @Original_Akvarium_nazev)) AND ((@IsNull_Akvarium_ph = 1 AND [Akvarium_ph] IS NULL) OR ([Akvarium_ph] = @Original_Akvarium_ph)) AND ((@IsNull_Datum_vytvoreni = 1 AND [Datum_vytvoreni] IS NULL) OR ([Datum_vytvoreni] = @Original_Datum_vytvoreni)) AND ((@IsNull_Id_zakaznik = 1 AND [Id_zakaznik] IS NULL) OR ([Id_zakaznik] = @Original_Id_zakaznik)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazev_akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazev_akvarium", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Akvarium_nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Akvarium_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Akvarium_ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Akvarium_ph", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_vytvoreni", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_vytvoreni", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_vytvoreni", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Akvarium] ([Nazev_akvarium], [Ph], [Datum_vytvoreni], [Id_Zakaznik]) VALUES (@Nazev_akvarium, @Ph, @Datum_vytvoreni, @Id_Zakaznik);
-SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvarium WHERE (Id_Akvarium = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Akvarium] ([Akvarium_nazev], [Akvarium_ph], [Datum_vytvoreni], [Id_zakaznik]) VALUES (@Akvarium_nazev, @Akvarium_ph, @Datum_vytvoreni, @Id_zakaznik);
+SELECT Id_Akvarium, Akvarium_nazev, Akvarium_ph, Datum_vytvoreni, Id_zakaznik FROM Akvarium WHERE (Id_Akvarium = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazev_akvarium", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_vytvoreni", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Akvarium_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Akvarium_ph", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_vytvoreni", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Akvarium] SET [Nazev_akvarium] = @Nazev_akvarium, [Ph] = @Ph, [Datum_vytvoreni] = @Datum_vytvoreni, [Id_Zakaznik] = @Id_Zakaznik WHERE (([Id_Akvarium] = @Original_Id_Akvarium) AND ((@IsNull_Nazev_akvarium = 1 AND [Nazev_akvarium] IS NULL) OR ([Nazev_akvarium] = @Original_Nazev_akvarium)) AND ((@IsNull_Ph = 1 AND [Ph] IS NULL) OR ([Ph] = @Original_Ph)) AND ((@IsNull_Datum_vytvoreni = 1 AND [Datum_vytvoreni] IS NULL) OR ([Datum_vytvoreni] = @Original_Datum_vytvoreni)) AND ((@IsNull_Id_Zakaznik = 1 AND [Id_Zakaznik] IS NULL) OR ([Id_Zakaznik] = @Original_Id_Zakaznik)));
-SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvarium WHERE (Id_Akvarium = @Id_Akvarium)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Akvarium] SET [Akvarium_nazev] = @Akvarium_nazev, [Akvarium_ph] = @Akvarium_ph, [Datum_vytvoreni] = @Datum_vytvoreni, [Id_zakaznik] = @Id_zakaznik WHERE (([Id_Akvarium] = @Original_Id_Akvarium) AND ((@IsNull_Akvarium_nazev = 1 AND [Akvarium_nazev] IS NULL) OR ([Akvarium_nazev] = @Original_Akvarium_nazev)) AND ((@IsNull_Akvarium_ph = 1 AND [Akvarium_ph] IS NULL) OR ([Akvarium_ph] = @Original_Akvarium_ph)) AND ((@IsNull_Datum_vytvoreni = 1 AND [Datum_vytvoreni] IS NULL) OR ([Datum_vytvoreni] = @Original_Datum_vytvoreni)) AND ((@IsNull_Id_zakaznik = 1 AND [Id_zakaznik] IS NULL) OR ([Id_zakaznik] = @Original_Id_zakaznik)));
+SELECT Id_Akvarium, Akvarium_nazev, Akvarium_ph, Datum_vytvoreni, Id_zakaznik FROM Akvarium WHERE (Id_Akvarium = @Id_Akvarium)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazev_akvarium", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_vytvoreni", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Akvarium_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Akvarium_ph", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_vytvoreni", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazev_akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazev_akvarium", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev_akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ph", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Akvarium_nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Akvarium_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Akvarium_ph", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Akvarium_ph", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Akvarium_ph", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_vytvoreni", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_vytvoreni", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_vytvoreni", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_vytvoreni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Akvarium", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2963,7 +2978,7 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.ZVERIMEXConnectionString;
+            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.Zverimex_AConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2972,8 +2987,8 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM dbo.Akv" +
-                "arium";
+            this._commandCollection[0].CommandText = "SELECT Id_Akvarium, Akvarium_nazev, Akvarium_ph, Datum_vytvoreni, Id_zakaznik FRO" +
+                "M dbo.Akvarium";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2981,7 +2996,7 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZVERIMEXDataSet.AkvariumDataTable dataTable) {
+        public virtual int Fill(Zverimex_ADataSet.AkvariumDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2994,9 +3009,9 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZVERIMEXDataSet.AkvariumDataTable GetData() {
+        public virtual Zverimex_ADataSet.AkvariumDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZVERIMEXDataSet.AkvariumDataTable dataTable = new ZVERIMEXDataSet.AkvariumDataTable();
+            Zverimex_ADataSet.AkvariumDataTable dataTable = new Zverimex_ADataSet.AkvariumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3004,14 +3019,14 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet.AkvariumDataTable dataTable) {
+        public virtual int Update(Zverimex_ADataSet.AkvariumDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet dataSet) {
+        public virtual int Update(Zverimex_ADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Akvarium");
         }
         
@@ -3034,23 +3049,23 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Akvarium, string Original_Nazev_akvarium, global::System.Nullable<int> Original_Ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_Zakaznik) {
+        public virtual int Delete(int Original_Id_Akvarium, string Original_Akvarium_nazev, string Original_Akvarium_ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_zakaznik) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Akvarium));
-            if ((Original_Nazev_akvarium == null)) {
+            if ((Original_Akvarium_nazev == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nazev_akvarium));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Akvarium_nazev));
             }
-            if ((Original_Ph.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Ph.Value));
-            }
-            else {
+            if ((Original_Akvarium_ph == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Akvarium_ph));
             }
             if ((Original_Datum_vytvoreni.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
@@ -3060,9 +3075,9 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Id_Zakaznik.HasValue == true)) {
+            if ((Original_Id_zakaznik.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Id_Zakaznik.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Id_zakaznik.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -3088,18 +3103,18 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nazev_akvarium, global::System.Nullable<int> Ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_Zakaznik) {
-            if ((Nazev_akvarium == null)) {
+        public virtual int Insert(string Akvarium_nazev, string Akvarium_ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_zakaznik) {
+            if ((Akvarium_nazev == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazev_akvarium));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Akvarium_nazev));
             }
-            if ((Ph.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ph.Value));
+            if ((Akvarium_ph == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Akvarium_ph));
             }
             if ((Datum_vytvoreni.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Datum_vytvoreni.Value));
@@ -3107,8 +3122,8 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Id_Zakaznik.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Id_Zakaznik.Value));
+            if ((Id_zakaznik.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Id_zakaznik.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3133,18 +3148,18 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazev_akvarium, global::System.Nullable<int> Ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_Zakaznik, int Original_Id_Akvarium, string Original_Nazev_akvarium, global::System.Nullable<int> Original_Ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_Zakaznik, int Id_Akvarium) {
-            if ((Nazev_akvarium == null)) {
+        public virtual int Update(string Akvarium_nazev, string Akvarium_ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_zakaznik, int Original_Id_Akvarium, string Original_Akvarium_nazev, string Original_Akvarium_ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_zakaznik, int Id_Akvarium) {
+            if ((Akvarium_nazev == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazev_akvarium));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Akvarium_nazev));
             }
-            if ((Ph.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Ph.Value));
+            if ((Akvarium_ph == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Akvarium_ph));
             }
             if ((Datum_vytvoreni.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Datum_vytvoreni.Value));
@@ -3152,28 +3167,28 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Id_Zakaznik.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id_Zakaznik.Value));
+            if ((Id_zakaznik.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id_zakaznik.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id_Akvarium));
-            if ((Original_Nazev_akvarium == null)) {
+            if ((Original_Akvarium_nazev == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nazev_akvarium));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Akvarium_nazev));
             }
-            if ((Original_Ph.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Ph.Value));
-            }
-            else {
+            if ((Original_Akvarium_ph == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Akvarium_ph));
             }
             if ((Original_Datum_vytvoreni.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
@@ -3183,9 +3198,9 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Id_Zakaznik.HasValue == true)) {
+            if ((Original_Id_zakaznik.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id_Zakaznik.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id_zakaznik.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
@@ -3212,8 +3227,369 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazev_akvarium, global::System.Nullable<int> Ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_Zakaznik, int Original_Id_Akvarium, string Original_Nazev_akvarium, global::System.Nullable<int> Original_Ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_Zakaznik) {
-            return this.Update(Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik, Original_Id_Akvarium, Original_Nazev_akvarium, Original_Ph, Original_Datum_vytvoreni, Original_Id_Zakaznik, Original_Id_Akvarium);
+        public virtual int Update(string Akvarium_nazev, string Akvarium_ph, global::System.Nullable<global::System.DateTime> Datum_vytvoreni, global::System.Nullable<int> Id_zakaznik, int Original_Id_Akvarium, string Original_Akvarium_nazev, string Original_Akvarium_ph, global::System.Nullable<global::System.DateTime> Original_Datum_vytvoreni, global::System.Nullable<int> Original_Id_zakaznik) {
+            return this.Update(Akvarium_nazev, Akvarium_ph, Datum_vytvoreni, Id_zakaznik, Original_Id_Akvarium, Original_Akvarium_nazev, Original_Akvarium_ph, Original_Datum_vytvoreni, Original_Id_zakaznik, Original_Id_Akvarium);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Obsah_akvariaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Obsah_akvariaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Obsah_akvaria";
+            tableMapping.ColumnMappings.Add("Id_Ryba", "Id_Ryba");
+            tableMapping.ColumnMappings.Add("Id_Akvarium", "Id_Akvarium");
+            tableMapping.ColumnMappings.Add("Id_Zakaznik", "Id_Zakaznik");
+            tableMapping.ColumnMappings.Add("Datum_pridani", "Datum_pridani");
+            tableMapping.ColumnMappings.Add("Datum_odebrani", "Datum_odebrani");
+            tableMapping.ColumnMappings.Add("Pocet", "Pocet");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Obsah_akvaria] WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ([Id_Akvarium] = @Original_Id_Akvarium) AND ([Id_Zakaznik] = @Original_Id_Zakaznik) AND ([Datum_pridani] = @Original_Datum_pridani) AND ((@IsNull_Datum_odebrani = 1 AND [Datum_odebrani] IS NULL) OR ([Datum_odebrani] = @Original_Datum_odebrani)) AND ([Pocet] = @Original_Pocet))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_odebrani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Obsah_akvaria] ([Id_Ryba], [Id_Akvarium], [Id_Zakaznik], [Datum_pridani], [Datum_odebrani], [Pocet]) VALUES (@Id_Ryba, @Id_Akvarium, @Id_Zakaznik, @Datum_pridani, @Datum_odebrani, @Pocet);
+SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FROM Obsah_akvaria WHERE (Id_Ryba = @Id_Ryba)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Obsah_akvaria] SET [Id_Ryba] = @Id_Ryba, [Id_Akvarium] = @Id_Akvarium, [Id_Zakaznik] = @Id_Zakaznik, [Datum_pridani] = @Datum_pridani, [Datum_odebrani] = @Datum_odebrani, [Pocet] = @Pocet WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ([Id_Akvarium] = @Original_Id_Akvarium) AND ([Id_Zakaznik] = @Original_Id_Zakaznik) AND ([Datum_pridani] = @Original_Datum_pridani) AND ((@IsNull_Datum_odebrani = 1 AND [Datum_odebrani] IS NULL) OR ([Datum_odebrani] = @Original_Datum_odebrani)) AND ([Pocet] = @Original_Pocet));
+SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FROM Obsah_akvaria WHERE (Id_Ryba = @Id_Ryba)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_odebrani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.Zverimex_AConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FR" +
+                "OM dbo.Obsah_akvaria";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Zverimex_ADataSet.Obsah_akvariaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Zverimex_ADataSet.Obsah_akvariaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Zverimex_ADataSet.Obsah_akvariaDataTable dataTable = new Zverimex_ADataSet.Obsah_akvariaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Zverimex_ADataSet.Obsah_akvariaDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Zverimex_ADataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Obsah_akvaria");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, int Original_Pocet) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Ryba));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Id_Akvarium));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Id_Zakaznik));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Datum_pridani));
+            if ((Original_Datum_odebrani.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Datum_odebrani.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Pocet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, int Pocet) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Ryba));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Id_Akvarium));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Id_Zakaznik));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Datum_pridani));
+            if ((Datum_odebrani.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Datum_odebrani.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Pocet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, int Pocet, int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, int Original_Pocet) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Ryba));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Id_Akvarium));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Id_Zakaznik));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Datum_pridani));
+            if ((Datum_odebrani.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Datum_odebrani.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Pocet));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id_Ryba));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id_Akvarium));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id_Zakaznik));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Datum_pridani));
+            if ((Original_Datum_odebrani.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Datum_odebrani.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Pocet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, int Pocet, int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, int Original_Pocet) {
+            return this.Update(Original_Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet, Original_Id_Ryba, Original_Id_Akvarium, Original_Id_Zakaznik, Original_Datum_pridani, Original_Datum_odebrani, Original_Pocet);
         }
     }
     
@@ -3339,52 +3715,51 @@ SELECT Id_Akvarium, Nazev_akvarium, Ph, Datum_vytvoreni, Id_Zakaznik FROM Akvari
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Ryba";
             tableMapping.ColumnMappings.Add("Id_Ryba", "Id_Ryba");
-            tableMapping.ColumnMappings.Add("Nazev", "Nazev");
-            tableMapping.ColumnMappings.Add("PH_min", "PH_min");
-            tableMapping.ColumnMappings.Add("PH_max", "PH_max");
-            tableMapping.ColumnMappings.Add("Zivotnost", "Zivotnost");
+            tableMapping.ColumnMappings.Add("Ryba_nazev", "Ryba_nazev");
+            tableMapping.ColumnMappings.Add("Ryba_ph_min", "Ryba_ph_min");
+            tableMapping.ColumnMappings.Add("Ryba_ph_max", "Ryba_ph_max");
+            tableMapping.ColumnMappings.Add("Ryba_zivotnost", "Ryba_zivotnost");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Ryba] WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ((@IsNull_Nazev = 1 AND [Nazev] IS NULL) OR ([Nazev] = @Original_Nazev)) AND ((@IsNull_PH_min = 1 AND [PH_min] IS NULL) OR ([PH_min] = @Original_PH_min)) AND ((@IsNull_PH_max = 1 AND [PH_max] IS NULL) OR ([PH_max] = @Original_PH_max)) AND ((@IsNull_Zivotnost = 1 AND [Zivotnost] IS NULL) OR ([Zivotnost] = @Original_Zivotnost)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Ryba] WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ((@IsNull_Ryba_nazev = 1 AND [Ryba_nazev] IS NULL) OR ([Ryba_nazev] = @Original_Ryba_nazev)) AND ((@IsNull_Ryba_ph_min = 1 AND [Ryba_ph_min] IS NULL) OR ([Ryba_ph_min] = @Original_Ryba_ph_min)) AND ((@IsNull_Ryba_ph_max = 1 AND [Ryba_ph_max] IS NULL) OR ([Ryba_ph_max] = @Original_Ryba_ph_max)) AND ((@IsNull_Ryba_zivotnost = 1 AND [Ryba_zivotnost] IS NULL) OR ([Ryba_zivotnost] = @Original_Ryba_zivotnost)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH_min", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH_max", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ryba] ([Nazev], [PH_min], [PH_max], [Zivotnost]) VALUES (@Naze" +
-                "v, @PH_min, @PH_max, @Zivotnost);\r\nSELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotn" +
-                "ost FROM Ryba WHERE (Id_Ryba = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Ryba] ([Ryba_nazev], [Ryba_ph_min], [Ryba_ph_max], [Ryba_zivotnost]) VALUES (@Ryba_nazev, @Ryba_ph_min, @Ryba_ph_max, @Ryba_zivotnost);
+SELECT Id_Ryba, Ryba_nazev, Ryba_ph_min, Ryba_ph_max, Ryba_zivotnost FROM Ryba WHERE (Id_Ryba = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH_min", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH_max", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ryba] SET [Nazev] = @Nazev, [PH_min] = @PH_min, [PH_max] = @PH_max, [Zivotnost] = @Zivotnost WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ((@IsNull_Nazev = 1 AND [Nazev] IS NULL) OR ([Nazev] = @Original_Nazev)) AND ((@IsNull_PH_min = 1 AND [PH_min] IS NULL) OR ([PH_min] = @Original_PH_min)) AND ((@IsNull_PH_max = 1 AND [PH_max] IS NULL) OR ([PH_max] = @Original_PH_max)) AND ((@IsNull_Zivotnost = 1 AND [Zivotnost] IS NULL) OR ([Zivotnost] = @Original_Zivotnost)));
-SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_Ryba)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ryba] SET [Ryba_nazev] = @Ryba_nazev, [Ryba_ph_min] = @Ryba_ph_min, [Ryba_ph_max] = @Ryba_ph_max, [Ryba_zivotnost] = @Ryba_zivotnost WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ((@IsNull_Ryba_nazev = 1 AND [Ryba_nazev] IS NULL) OR ([Ryba_nazev] = @Original_Ryba_nazev)) AND ((@IsNull_Ryba_ph_min = 1 AND [Ryba_ph_min] IS NULL) OR ([Ryba_ph_min] = @Original_Ryba_ph_min)) AND ((@IsNull_Ryba_ph_max = 1 AND [Ryba_ph_max] IS NULL) OR ([Ryba_ph_max] = @Original_Ryba_ph_max)) AND ((@IsNull_Ryba_zivotnost = 1 AND [Ryba_zivotnost] IS NULL) OR ([Ryba_zivotnost] = @Original_Ryba_zivotnost)));
+SELECT Id_Ryba, Ryba_nazev, Ryba_ph_min, Ryba_ph_max, Ryba_zivotnost FROM Ryba WHERE (Id_Ryba = @Id_Ryba)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH_min", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH_max", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH_min", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH_max", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH_max", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zivotnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_nazev", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_nazev", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_nazev", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_ph_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_ph_max", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_ph_max", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ryba_zivotnost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ryba_zivotnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3392,7 +3767,7 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.ZVERIMEXConnectionString;
+            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.Zverimex_AConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3401,7 +3776,8 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM dbo.Ryba";
+            this._commandCollection[0].CommandText = "SELECT Id_Ryba, Ryba_nazev, Ryba_ph_min, Ryba_ph_max, Ryba_zivotnost FROM dbo.Ryb" +
+                "a";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3409,7 +3785,7 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZVERIMEXDataSet.RybaDataTable dataTable) {
+        public virtual int Fill(Zverimex_ADataSet.RybaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3422,9 +3798,9 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZVERIMEXDataSet.RybaDataTable GetData() {
+        public virtual Zverimex_ADataSet.RybaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZVERIMEXDataSet.RybaDataTable dataTable = new ZVERIMEXDataSet.RybaDataTable();
+            Zverimex_ADataSet.RybaDataTable dataTable = new Zverimex_ADataSet.RybaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3432,14 +3808,14 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet.RybaDataTable dataTable) {
+        public virtual int Update(Zverimex_ADataSet.RybaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet dataSet) {
+        public virtual int Update(Zverimex_ADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Ryba");
         }
         
@@ -3462,35 +3838,35 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Ryba, string Original_Nazev, global::System.Nullable<double> Original_PH_min, global::System.Nullable<double> Original_PH_max, global::System.Nullable<int> Original_Zivotnost) {
+        public virtual int Delete(int Original_Id_Ryba, string Original_Ryba_nazev, global::System.Nullable<int> Original_Ryba_ph_min, global::System.Nullable<int> Original_Ryba_ph_max, global::System.Nullable<int> Original_Ryba_zivotnost) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Ryba));
-            if ((Original_Nazev == null)) {
+            if ((Original_Ryba_nazev == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nazev));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Ryba_nazev));
             }
-            if ((Original_PH_min.HasValue == true)) {
+            if ((Original_Ryba_ph_min.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_PH_min.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Ryba_ph_min.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_PH_max.HasValue == true)) {
+            if ((Original_Ryba_ph_max.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_PH_max.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Ryba_ph_max.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Zivotnost.HasValue == true)) {
+            if ((Original_Ryba_zivotnost.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Zivotnost.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Ryba_zivotnost.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -3516,27 +3892,27 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nazev, global::System.Nullable<double> PH_min, global::System.Nullable<double> PH_max, global::System.Nullable<int> Zivotnost) {
-            if ((Nazev == null)) {
+        public virtual int Insert(string Ryba_nazev, global::System.Nullable<int> Ryba_ph_min, global::System.Nullable<int> Ryba_ph_max, global::System.Nullable<int> Ryba_zivotnost) {
+            if ((Ryba_nazev == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazev));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Ryba_nazev));
             }
-            if ((PH_min.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(PH_min.Value));
+            if ((Ryba_ph_min.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ryba_ph_min.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PH_max.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(PH_max.Value));
+            if ((Ryba_ph_max.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Ryba_ph_max.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Zivotnost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Zivotnost.Value));
+            if ((Ryba_zivotnost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Ryba_zivotnost.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3561,59 +3937,59 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazev, global::System.Nullable<double> PH_min, global::System.Nullable<double> PH_max, global::System.Nullable<int> Zivotnost, int Original_Id_Ryba, string Original_Nazev, global::System.Nullable<double> Original_PH_min, global::System.Nullable<double> Original_PH_max, global::System.Nullable<int> Original_Zivotnost, int Id_Ryba) {
-            if ((Nazev == null)) {
+        public virtual int Update(string Ryba_nazev, global::System.Nullable<int> Ryba_ph_min, global::System.Nullable<int> Ryba_ph_max, global::System.Nullable<int> Ryba_zivotnost, int Original_Id_Ryba, string Original_Ryba_nazev, global::System.Nullable<int> Original_Ryba_ph_min, global::System.Nullable<int> Original_Ryba_ph_max, global::System.Nullable<int> Original_Ryba_zivotnost, int Id_Ryba) {
+            if ((Ryba_nazev == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazev));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Ryba_nazev));
             }
-            if ((PH_min.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((double)(PH_min.Value));
+            if ((Ryba_ph_min.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Ryba_ph_min.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PH_max.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(PH_max.Value));
+            if ((Ryba_ph_max.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Ryba_ph_max.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Zivotnost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Zivotnost.Value));
+            if ((Ryba_zivotnost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Ryba_zivotnost.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id_Ryba));
-            if ((Original_Nazev == null)) {
+            if ((Original_Ryba_nazev == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nazev));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Ryba_nazev));
             }
-            if ((Original_PH_min.HasValue == true)) {
+            if ((Original_Ryba_ph_min.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Original_PH_min.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Ryba_ph_min.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_PH_max.HasValue == true)) {
+            if ((Original_Ryba_ph_max.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_PH_max.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Ryba_ph_max.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Zivotnost.HasValue == true)) {
+            if ((Original_Ryba_zivotnost.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Zivotnost.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Ryba_zivotnost.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
@@ -3640,8 +4016,8 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazev, global::System.Nullable<double> PH_min, global::System.Nullable<double> PH_max, global::System.Nullable<int> Zivotnost, int Original_Id_Ryba, string Original_Nazev, global::System.Nullable<double> Original_PH_min, global::System.Nullable<double> Original_PH_max, global::System.Nullable<int> Original_Zivotnost) {
-            return this.Update(Nazev, PH_min, PH_max, Zivotnost, Original_Id_Ryba, Original_Nazev, Original_PH_min, Original_PH_max, Original_Zivotnost, Original_Id_Ryba);
+        public virtual int Update(string Ryba_nazev, global::System.Nullable<int> Ryba_ph_min, global::System.Nullable<int> Ryba_ph_max, global::System.Nullable<int> Ryba_zivotnost, int Original_Id_Ryba, string Original_Ryba_nazev, global::System.Nullable<int> Original_Ryba_ph_min, global::System.Nullable<int> Original_Ryba_ph_max, global::System.Nullable<int> Original_Ryba_zivotnost) {
+            return this.Update(Ryba_nazev, Ryba_ph_min, Ryba_ph_max, Ryba_zivotnost, Original_Id_Ryba, Original_Ryba_nazev, Original_Ryba_ph_min, Original_Ryba_ph_max, Original_Ryba_zivotnost, Original_Id_Ryba);
         }
     }
     
@@ -3654,7 +4030,7 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Ryba_Akvarium_ZakaznikTableAdapter : global::System.ComponentModel.Component {
+    public partial class VztahTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3668,7 +4044,7 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Ryba_Akvarium_ZakaznikTableAdapter() {
+        public VztahTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3765,430 +4141,45 @@ SELECT Id_Ryba, Nazev, PH_min, PH_max, Zivotnost FROM Ryba WHERE (Id_Ryba = @Id_
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Ryba_Akvarium_Zakaznik";
-            tableMapping.ColumnMappings.Add("Id_Ryba", "Id_Ryba");
-            tableMapping.ColumnMappings.Add("Id_Akvarium", "Id_Akvarium");
-            tableMapping.ColumnMappings.Add("Id_Zakaznik", "Id_Zakaznik");
-            tableMapping.ColumnMappings.Add("Datum_pridani", "Datum_pridani");
-            tableMapping.ColumnMappings.Add("Datum_odebrani", "Datum_odebrani");
-            tableMapping.ColumnMappings.Add("Pocet", "Pocet");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Ryba_Akvarium_Zakaznik] WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ([Id_Akvarium] = @Original_Id_Akvarium) AND ([Id_Zakaznik] = @Original_Id_Zakaznik) AND ([Datum_pridani] = @Original_Datum_pridani) AND ((@IsNull_Datum_odebrani = 1 AND [Datum_odebrani] IS NULL) OR ([Datum_odebrani] = @Original_Datum_odebrani)) AND ((@IsNull_Pocet = 1 AND [Pocet] IS NULL) OR ([Pocet] = @Original_Pocet)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_odebrani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Ryba_Akvarium_Zakaznik] ([Id_Ryba], [Id_Akvarium], [Id_Zakaznik], [Datum_pridani], [Datum_odebrani], [Pocet]) VALUES (@Id_Ryba, @Id_Akvarium, @Id_Zakaznik, @Datum_pridani, @Datum_odebrani, @Pocet);
-SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FROM Ryba_Akvarium_Zakaznik WHERE (Id_Ryba = @Id_Ryba)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ryba_Akvarium_Zakaznik] SET [Id_Ryba] = @Id_Ryba, [Id_Akvarium] = @Id_Akvarium, [Id_Zakaznik] = @Id_Zakaznik, [Datum_pridani] = @Datum_pridani, [Datum_odebrani] = @Datum_odebrani, [Pocet] = @Pocet WHERE (([Id_Ryba] = @Original_Id_Ryba) AND ([Id_Akvarium] = @Original_Id_Akvarium) AND ([Id_Zakaznik] = @Original_Id_Zakaznik) AND ([Datum_pridani] = @Original_Datum_pridani) AND ((@IsNull_Datum_odebrani = 1 AND [Datum_odebrani] IS NULL) OR ([Datum_odebrani] = @Original_Datum_odebrani)) AND ((@IsNull_Pocet = 1 AND [Pocet] IS NULL) OR ([Pocet] = @Original_Pocet)));
-SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FROM Ryba_Akvarium_Zakaznik WHERE (Id_Ryba = @Id_Ryba)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Akvarium", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Akvarium", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_pridani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_pridani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum_odebrani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum_odebrani", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_odebrani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pocet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pocet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.ZVERIMEXConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet FR" +
-                "OM dbo.Ryba_Akvarium_Zakaznik";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZVERIMEXDataSet.Ryba_Akvarium_ZakaznikDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZVERIMEXDataSet.Ryba_Akvarium_ZakaznikDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZVERIMEXDataSet.Ryba_Akvarium_ZakaznikDataTable dataTable = new ZVERIMEXDataSet.Ryba_Akvarium_ZakaznikDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet.Ryba_Akvarium_ZakaznikDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Ryba_Akvarium_Zakaznik");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, global::System.Nullable<int> Original_Pocet) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Ryba));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Id_Akvarium));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Id_Zakaznik));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Datum_pridani));
-            if ((Original_Datum_odebrani.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Datum_odebrani.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pocet.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Pocet.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, global::System.Nullable<int> Pocet) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Ryba));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Id_Akvarium));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Id_Zakaznik));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Datum_pridani));
-            if ((Datum_odebrani.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Datum_odebrani.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Pocet.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Pocet.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id_Ryba, int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, global::System.Nullable<int> Pocet, int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, global::System.Nullable<int> Original_Pocet) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Ryba));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Id_Akvarium));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Id_Zakaznik));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Datum_pridani));
-            if ((Datum_odebrani.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Datum_odebrani.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Pocet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Pocet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id_Ryba));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id_Akvarium));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id_Zakaznik));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Datum_pridani));
-            if ((Original_Datum_odebrani.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Datum_odebrani.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pocet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Pocet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id_Akvarium, int Id_Zakaznik, System.DateTime Datum_pridani, global::System.Nullable<global::System.DateTime> Datum_odebrani, global::System.Nullable<int> Pocet, int Original_Id_Ryba, int Original_Id_Akvarium, int Original_Id_Zakaznik, System.DateTime Original_Datum_pridani, global::System.Nullable<global::System.DateTime> Original_Datum_odebrani, global::System.Nullable<int> Original_Pocet) {
-            return this.Update(Original_Id_Ryba, Id_Akvarium, Id_Zakaznik, Datum_pridani, Datum_odebrani, Pocet, Original_Id_Ryba, Original_Id_Akvarium, Original_Id_Zakaznik, Original_Datum_pridani, Original_Datum_odebrani, Original_Pocet);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VztahyTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public VztahyTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Vztahy";
+            tableMapping.DataSetTable = "Vztah";
             tableMapping.ColumnMappings.Add("Id_vztah", "Id_vztah");
-            tableMapping.ColumnMappings.Add("Id_Ryba_1", "Id_Ryba_1");
-            tableMapping.ColumnMappings.Add("Id_Ryba_2", "Id_Ryba_2");
+            tableMapping.ColumnMappings.Add("Id_ryba_1", "Id_ryba_1");
+            tableMapping.ColumnMappings.Add("Id_ryba_2", "Id_ryba_2");
             tableMapping.ColumnMappings.Add("Vztah", "Vztah");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Vztahy] WHERE (([Id_vztah] = @Original_Id_vztah) AND ([Id_Ryba" +
-                "_1] = @Original_Id_Ryba_1) AND ([Id_Ryba_2] = @Original_Id_Ryba_2) AND ((@IsNull" +
-                "_Vztah = 1 AND [Vztah] IS NULL) OR ([Vztah] = @Original_Vztah)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Vztah] WHERE (([Id_vztah] = @Original_Id_vztah) AND ((@IsNull_Id_ryba_1 = 1 AND [Id_ryba_1] IS NULL) OR ([Id_ryba_1] = @Original_Id_ryba_1)) AND ((@IsNull_Id_ryba_2 = 1 AND [Id_ryba_2] IS NULL) OR ([Id_ryba_2] = @Original_Id_ryba_2)) AND ((@IsNull_Vztah = 1 AND [Vztah] IS NULL) OR ([Vztah] = @Original_Vztah)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_vztah", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_vztah", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vztah", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vztah", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vztahy] ([Id_Ryba_1], [Id_Ryba_2], [Vztah]) VALUES (@Id_Ryba_1" +
-                ", @Id_Ryba_2, @Vztah);\r\nSELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy" +
-                " WHERE (Id_vztah = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vztah] ([Id_ryba_1], [Id_ryba_2], [Vztah]) VALUES (@Id_ryba_1," +
+                " @Id_ryba_2, @Vztah);\r\nSELECT Id_vztah, Id_ryba_1, Id_ryba_2, Vztah FROM Vztah W" +
+                "HERE (Id_vztah = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vztah", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vztahy] SET [Id_Ryba_1] = @Id_Ryba_1, [Id_Ryba_2] = @Id_Ryba_2, [Vztah] = @Vztah WHERE (([Id_vztah] = @Original_Id_vztah) AND ([Id_Ryba_1] = @Original_Id_Ryba_1) AND ([Id_Ryba_2] = @Original_Id_Ryba_2) AND ((@IsNull_Vztah = 1 AND [Vztah] IS NULL) OR ([Vztah] = @Original_Vztah)));
-SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_vztah)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vztah] SET [Id_ryba_1] = @Id_ryba_1, [Id_ryba_2] = @Id_ryba_2, [Vztah] = @Vztah WHERE (([Id_vztah] = @Original_Id_vztah) AND ((@IsNull_Id_ryba_1 = 1 AND [Id_ryba_1] IS NULL) OR ([Id_ryba_1] = @Original_Id_ryba_1)) AND ((@IsNull_Id_ryba_2 = 1 AND [Id_ryba_2] IS NULL) OR ([Id_ryba_2] = @Original_Id_ryba_2)) AND ((@IsNull_Vztah = 1 AND [Vztah] IS NULL) OR ([Vztah] = @Original_Vztah)));
+SELECT Id_vztah, Id_ryba_1, Id_ryba_2, Vztah FROM Vztah WHERE (Id_vztah = @Id_vztah)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vztah", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_vztah", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_vztah", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Ryba_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_ryba_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_ryba_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_ryba_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vztah", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vztah", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vztah", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_vztah", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_vztah", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4198,7 +4189,7 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.ZVERIMEXConnectionString;
+            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.Zverimex_AConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4207,7 +4198,7 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM dbo.Vztahy";
+            this._commandCollection[0].CommandText = "SELECT Id_vztah, Id_ryba_1, Id_ryba_2, Vztah FROM dbo.Vztah";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4215,7 +4206,7 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZVERIMEXDataSet.VztahyDataTable dataTable) {
+        public virtual int Fill(Zverimex_ADataSet.VztahDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4228,9 +4219,9 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZVERIMEXDataSet.VztahyDataTable GetData() {
+        public virtual Zverimex_ADataSet.VztahDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZVERIMEXDataSet.VztahyDataTable dataTable = new ZVERIMEXDataSet.VztahyDataTable();
+            Zverimex_ADataSet.VztahDataTable dataTable = new Zverimex_ADataSet.VztahDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4238,15 +4229,15 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet.VztahyDataTable dataTable) {
+        public virtual int Update(Zverimex_ADataSet.VztahDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Vztahy");
+        public virtual int Update(Zverimex_ADataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Vztah");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4268,17 +4259,31 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_vztah, int Original_Id_Ryba_1, int Original_Id_Ryba_2, global::System.Nullable<bool> Original_Vztah) {
+        public virtual int Delete(int Original_Id_vztah, global::System.Nullable<int> Original_Id_ryba_1, global::System.Nullable<int> Original_Id_ryba_2, global::System.Nullable<bool> Original_Vztah) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_vztah));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Id_Ryba_1));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Id_Ryba_2));
-            if ((Original_Vztah.HasValue == true)) {
+            if ((Original_Id_ryba_1.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Id_ryba_1.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Id_ryba_2.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_Vztah.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Id_ryba_2.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Vztah.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Vztah.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4300,9 +4305,19 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id_Ryba_1, int Id_Ryba_2, global::System.Nullable<bool> Vztah) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Ryba_1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Id_Ryba_2));
+        public virtual int Insert(global::System.Nullable<int> Id_ryba_1, global::System.Nullable<int> Id_ryba_2, global::System.Nullable<bool> Vztah) {
+            if ((Id_ryba_1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_ryba_1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Id_ryba_2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Id_ryba_2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((Vztah.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Vztah.Value));
             }
@@ -4329,9 +4344,19 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id_Ryba_1, int Id_Ryba_2, global::System.Nullable<bool> Vztah, int Original_Id_vztah, int Original_Id_Ryba_1, int Original_Id_Ryba_2, global::System.Nullable<bool> Original_Vztah, int Id_vztah) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Ryba_1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Id_Ryba_2));
+        public virtual int Update(global::System.Nullable<int> Id_ryba_1, global::System.Nullable<int> Id_ryba_2, global::System.Nullable<bool> Vztah, int Original_Id_vztah, global::System.Nullable<int> Original_Id_ryba_1, global::System.Nullable<int> Original_Id_ryba_2, global::System.Nullable<bool> Original_Vztah, int Id_vztah) {
+            if ((Id_ryba_1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_ryba_1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Id_ryba_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Id_ryba_2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((Vztah.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(Vztah.Value));
             }
@@ -4339,17 +4364,31 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id_vztah));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id_Ryba_1));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id_Ryba_2));
-            if ((Original_Vztah.HasValue == true)) {
+            if ((Original_Id_ryba_1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id_ryba_1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Id_ryba_2.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_Vztah.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id_ryba_2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Id_vztah));
+            if ((Original_Vztah.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_Vztah.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Id_vztah));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4370,8 +4409,8 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id_Ryba_1, int Id_Ryba_2, global::System.Nullable<bool> Vztah, int Original_Id_vztah, int Original_Id_Ryba_1, int Original_Id_Ryba_2, global::System.Nullable<bool> Original_Vztah) {
-            return this.Update(Id_Ryba_1, Id_Ryba_2, Vztah, Original_Id_vztah, Original_Id_Ryba_1, Original_Id_Ryba_2, Original_Vztah, Original_Id_vztah);
+        public virtual int Update(global::System.Nullable<int> Id_ryba_1, global::System.Nullable<int> Id_ryba_2, global::System.Nullable<bool> Vztah, int Original_Id_vztah, global::System.Nullable<int> Original_Id_ryba_1, global::System.Nullable<int> Original_Id_ryba_2, global::System.Nullable<bool> Original_Vztah) {
+            return this.Update(Id_ryba_1, Id_ryba_2, Vztah, Original_Id_vztah, Original_Id_ryba_1, Original_Id_ryba_2, Original_Vztah, Original_Id_vztah);
         }
     }
     
@@ -4504,17 +4543,15 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Zakaznik] WHERE (([Id_Zakaznik] = @Original_Id_Zakaznik) AND ((@IsNull_Jmeno = 1 AND [Jmeno] IS NULL) OR ([Jmeno] = @Original_Jmeno)) AND ((@IsNull_Prijmeni = 1 AND [Prijmeni] IS NULL) OR ([Prijmeni] = @Original_Prijmeni)) AND ((@IsNull_Adresa = 1 AND [Adresa] IS NULL) OR ([Adresa] = @Original_Adresa)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Zakaznik] WHERE (([Id_Zakaznik] = @Original_Id_Zakaznik) AND ((@IsNull_Jmeno = 1 AND [Jmeno] IS NULL) OR ([Jmeno] = @Original_Jmeno)) AND ((@IsNull_Prijmeni = 1 AND [Prijmeni] IS NULL) OR ([Prijmeni] = @Original_Prijmeni)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Jmeno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Jmeno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prijmeni", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prijmeni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Zakaznik] ([Jmeno], [Prijmeni], [Adresa], [Kontakt]) VALUES (@" +
@@ -4524,25 +4561,23 @@ SELECT Id_vztah, Id_Ryba_1, Id_Ryba_2, Vztah FROM Vztahy WHERE (Id_vztah = @Id_v
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jmeno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prijmeni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zakaznik] SET [Jmeno] = @Jmeno, [Prijmeni] = @Prijmeni, [Adresa] = @Adresa, [Kontakt] = @Kontakt WHERE (([Id_Zakaznik] = @Original_Id_Zakaznik) AND ((@IsNull_Jmeno = 1 AND [Jmeno] IS NULL) OR ([Jmeno] = @Original_Jmeno)) AND ((@IsNull_Prijmeni = 1 AND [Prijmeni] IS NULL) OR ([Prijmeni] = @Original_Prijmeni)) AND ((@IsNull_Adresa = 1 AND [Adresa] IS NULL) OR ([Adresa] = @Original_Adresa)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zakaznik] SET [Jmeno] = @Jmeno, [Prijmeni] = @Prijmeni, [Adresa] = @Adresa, [Kontakt] = @Kontakt WHERE (([Id_Zakaznik] = @Original_Id_Zakaznik) AND ((@IsNull_Jmeno = 1 AND [Jmeno] IS NULL) OR ([Jmeno] = @Original_Jmeno)) AND ((@IsNull_Prijmeni = 1 AND [Prijmeni] IS NULL) OR ([Prijmeni] = @Original_Prijmeni)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)));
 SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zakaznik = @Id_Zakaznik)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jmeno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prijmeni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Zakaznik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Jmeno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Jmeno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jmeno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prijmeni", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prijmeni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prijmeni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Zakaznik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Zakaznik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4550,7 +4585,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.ZVERIMEXConnectionString;
+            this._connection.ConnectionString = global::Akvarium.Properties.Settings.Default.Zverimex_AConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4567,7 +4602,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZVERIMEXDataSet.ZakaznikDataTable dataTable) {
+        public virtual int Fill(Zverimex_ADataSet.ZakaznikDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4580,9 +4615,9 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZVERIMEXDataSet.ZakaznikDataTable GetData() {
+        public virtual Zverimex_ADataSet.ZakaznikDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZVERIMEXDataSet.ZakaznikDataTable dataTable = new ZVERIMEXDataSet.ZakaznikDataTable();
+            Zverimex_ADataSet.ZakaznikDataTable dataTable = new Zverimex_ADataSet.ZakaznikDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4590,14 +4625,14 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet.ZakaznikDataTable dataTable) {
+        public virtual int Update(Zverimex_ADataSet.ZakaznikDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZVERIMEXDataSet dataSet) {
+        public virtual int Update(Zverimex_ADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Zakaznik");
         }
         
@@ -4620,7 +4655,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, string Original_Adresa, string Original_Kontakt) {
+        public virtual int Delete(int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, global::System.Nullable<int> Original_Kontakt) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Zakaznik));
             if ((Original_Jmeno == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4638,21 +4673,13 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Prijmeni));
             }
-            if ((Original_Adresa == null)) {
+            if ((Original_Kontakt.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Kontakt.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Adresa));
-            }
-            if ((Original_Kontakt == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Kontakt));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4674,7 +4701,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Jmeno, string Prijmeni, string Adresa, string Kontakt) {
+        public virtual int Insert(string Jmeno, string Prijmeni, string Adresa, global::System.Nullable<int> Kontakt) {
             if ((Jmeno == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4693,11 +4720,11 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Adresa));
             }
-            if ((Kontakt == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Kontakt.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Kontakt.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Kontakt));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4719,7 +4746,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Jmeno, string Prijmeni, string Adresa, string Kontakt, int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, string Original_Adresa, string Original_Kontakt, int Id_Zakaznik) {
+        public virtual int Update(string Jmeno, string Prijmeni, string Adresa, global::System.Nullable<int> Kontakt, int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, global::System.Nullable<int> Original_Kontakt, int Id_Zakaznik) {
             if ((Jmeno == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4738,11 +4765,11 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Adresa));
             }
-            if ((Kontakt == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Kontakt.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Kontakt.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Kontakt));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id_Zakaznik));
             if ((Original_Jmeno == null)) {
@@ -4761,23 +4788,15 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Prijmeni));
             }
-            if ((Original_Adresa == null)) {
+            if ((Original_Kontakt.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Kontakt.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Adresa));
-            }
-            if ((Original_Kontakt == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Kontakt));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Id_Zakaznik));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id_Zakaznik));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4798,8 +4817,8 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Jmeno, string Prijmeni, string Adresa, string Kontakt, int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, string Original_Adresa, string Original_Kontakt) {
-            return this.Update(Jmeno, Prijmeni, Adresa, Kontakt, Original_Id_Zakaznik, Original_Jmeno, Original_Prijmeni, Original_Adresa, Original_Kontakt, Original_Id_Zakaznik);
+        public virtual int Update(string Jmeno, string Prijmeni, string Adresa, global::System.Nullable<int> Kontakt, int Original_Id_Zakaznik, string Original_Jmeno, string Original_Prijmeni, global::System.Nullable<int> Original_Kontakt) {
+            return this.Update(Jmeno, Prijmeni, Adresa, Kontakt, Original_Id_Zakaznik, Original_Jmeno, Original_Prijmeni, Original_Kontakt, Original_Id_Zakaznik);
         }
     }
     
@@ -4817,11 +4836,11 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         
         private AkvariumTableAdapter _akvariumTableAdapter;
         
+        private Obsah_akvariaTableAdapter _obsah_akvariaTableAdapter;
+        
         private RybaTableAdapter _rybaTableAdapter;
         
-        private Ryba_Akvarium_ZakaznikTableAdapter _ryba_Akvarium_ZakaznikTableAdapter;
-        
-        private VztahyTableAdapter _vztahyTableAdapter;
+        private VztahTableAdapter _vztahTableAdapter;
         
         private ZakaznikTableAdapter _zakaznikTableAdapter;
         
@@ -4859,6 +4878,20 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public Obsah_akvariaTableAdapter Obsah_akvariaTableAdapter {
+            get {
+                return this._obsah_akvariaTableAdapter;
+            }
+            set {
+                this._obsah_akvariaTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public RybaTableAdapter RybaTableAdapter {
             get {
                 return this._rybaTableAdapter;
@@ -4873,26 +4906,12 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Ryba_Akvarium_ZakaznikTableAdapter Ryba_Akvarium_ZakaznikTableAdapter {
+        public VztahTableAdapter VztahTableAdapter {
             get {
-                return this._ryba_Akvarium_ZakaznikTableAdapter;
+                return this._vztahTableAdapter;
             }
             set {
-                this._ryba_Akvarium_ZakaznikTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public VztahyTableAdapter VztahyTableAdapter {
-            get {
-                return this._vztahyTableAdapter;
-            }
-            set {
-                this._vztahyTableAdapter = value;
+                this._vztahTableAdapter = value;
             }
         }
         
@@ -4933,17 +4952,17 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                             && (this._akvariumTableAdapter.Connection != null))) {
                     return this._akvariumTableAdapter.Connection;
                 }
+                if (((this._obsah_akvariaTableAdapter != null) 
+                            && (this._obsah_akvariaTableAdapter.Connection != null))) {
+                    return this._obsah_akvariaTableAdapter.Connection;
+                }
                 if (((this._rybaTableAdapter != null) 
                             && (this._rybaTableAdapter.Connection != null))) {
                     return this._rybaTableAdapter.Connection;
                 }
-                if (((this._ryba_Akvarium_ZakaznikTableAdapter != null) 
-                            && (this._ryba_Akvarium_ZakaznikTableAdapter.Connection != null))) {
-                    return this._ryba_Akvarium_ZakaznikTableAdapter.Connection;
-                }
-                if (((this._vztahyTableAdapter != null) 
-                            && (this._vztahyTableAdapter.Connection != null))) {
-                    return this._vztahyTableAdapter.Connection;
+                if (((this._vztahTableAdapter != null) 
+                            && (this._vztahTableAdapter.Connection != null))) {
+                    return this._vztahTableAdapter.Connection;
                 }
                 if (((this._zakaznikTableAdapter != null) 
                             && (this._zakaznikTableAdapter.Connection != null))) {
@@ -4965,13 +4984,13 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 if ((this._akvariumTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._obsah_akvariaTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._rybaTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._vztahyTableAdapter != null)) {
+                if ((this._vztahTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._zakaznikTableAdapter != null)) {
@@ -4986,7 +5005,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ZVERIMEXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Zverimex_ADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._akvariumTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Akvarium.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -4994,6 +5013,15 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._akvariumTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._obsah_akvariaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Obsah_akvaria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._obsah_akvariaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5006,21 +5034,12 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Ryba_Akvarium_Zakaznik.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._vztahTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Vztah.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ryba_Akvarium_ZakaznikTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._vztahyTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Vztahy.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vztahyTableAdapter.Update(updatedRows));
+                    result = (result + this._vztahTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5041,13 +5060,21 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ZVERIMEXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Zverimex_ADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._akvariumTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Akvarium.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._akvariumTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._obsah_akvariaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Obsah_akvaria.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._obsah_akvariaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5059,19 +5086,11 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Ryba_Akvarium_Zakaznik.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._vztahTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Vztah.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ryba_Akvarium_ZakaznikTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._vztahyTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Vztahy.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vztahyTableAdapter.Update(addedRows));
+                    result = (result + this._vztahTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5091,7 +5110,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ZVERIMEXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Zverimex_ADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._zakaznikTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Zakaznik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5101,19 +5120,11 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._vztahyTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Vztahy.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._vztahTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Vztah.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._vztahyTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Ryba_Akvarium_Zakaznik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._ryba_Akvarium_ZakaznikTableAdapter.Update(deletedRows));
+                    result = (result + this._vztahTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5122,6 +5133,14 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._rybaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._obsah_akvariaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Obsah_akvaria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._obsah_akvariaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5165,7 +5184,7 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ZVERIMEXDataSet dataSet) {
+        public virtual int UpdateAll(Zverimex_ADataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -5177,18 +5196,18 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._obsah_akvariaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._obsah_akvariaTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             if (((this._rybaTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._rybaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._ryba_Akvarium_ZakaznikTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._ryba_Akvarium_ZakaznikTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._vztahyTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._vztahyTableAdapter.Connection) == false))) {
+            if (((this._vztahTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._vztahTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5238,6 +5257,15 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                         adaptersWithAcceptChangesDuringUpdate.Add(this._akvariumTableAdapter.Adapter);
                     }
                 }
+                if ((this._obsah_akvariaTableAdapter != null)) {
+                    revertConnections.Add(this._obsah_akvariaTableAdapter, this._obsah_akvariaTableAdapter.Connection);
+                    this._obsah_akvariaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._obsah_akvariaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._obsah_akvariaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._obsah_akvariaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._obsah_akvariaTableAdapter.Adapter);
+                    }
+                }
                 if ((this._rybaTableAdapter != null)) {
                     revertConnections.Add(this._rybaTableAdapter, this._rybaTableAdapter.Connection);
                     this._rybaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -5247,22 +5275,13 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                         adaptersWithAcceptChangesDuringUpdate.Add(this._rybaTableAdapter.Adapter);
                     }
                 }
-                if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                    revertConnections.Add(this._ryba_Akvarium_ZakaznikTableAdapter, this._ryba_Akvarium_ZakaznikTableAdapter.Connection);
-                    this._ryba_Akvarium_ZakaznikTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._ryba_Akvarium_ZakaznikTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._ryba_Akvarium_ZakaznikTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._ryba_Akvarium_ZakaznikTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._ryba_Akvarium_ZakaznikTableAdapter.Adapter);
-                    }
-                }
-                if ((this._vztahyTableAdapter != null)) {
-                    revertConnections.Add(this._vztahyTableAdapter, this._vztahyTableAdapter.Connection);
-                    this._vztahyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._vztahyTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._vztahyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._vztahyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._vztahyTableAdapter.Adapter);
+                if ((this._vztahTableAdapter != null)) {
+                    revertConnections.Add(this._vztahTableAdapter, this._vztahTableAdapter.Connection);
+                    this._vztahTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._vztahTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._vztahTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._vztahTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._vztahTableAdapter.Adapter);
                     }
                 }
                 if ((this._zakaznikTableAdapter != null)) {
@@ -5336,17 +5355,17 @@ SELECT Id_Zakaznik, Jmeno, Prijmeni, Adresa, Kontakt FROM Zakaznik WHERE (Id_Zak
                     this._akvariumTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._akvariumTableAdapter]));
                     this._akvariumTableAdapter.Transaction = null;
                 }
+                if ((this._obsah_akvariaTableAdapter != null)) {
+                    this._obsah_akvariaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._obsah_akvariaTableAdapter]));
+                    this._obsah_akvariaTableAdapter.Transaction = null;
+                }
                 if ((this._rybaTableAdapter != null)) {
                     this._rybaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rybaTableAdapter]));
                     this._rybaTableAdapter.Transaction = null;
                 }
-                if ((this._ryba_Akvarium_ZakaznikTableAdapter != null)) {
-                    this._ryba_Akvarium_ZakaznikTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ryba_Akvarium_ZakaznikTableAdapter]));
-                    this._ryba_Akvarium_ZakaznikTableAdapter.Transaction = null;
-                }
-                if ((this._vztahyTableAdapter != null)) {
-                    this._vztahyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vztahyTableAdapter]));
-                    this._vztahyTableAdapter.Transaction = null;
+                if ((this._vztahTableAdapter != null)) {
+                    this._vztahTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vztahTableAdapter]));
+                    this._vztahTableAdapter.Transaction = null;
                 }
                 if ((this._zakaznikTableAdapter != null)) {
                     this._zakaznikTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zakaznikTableAdapter]));

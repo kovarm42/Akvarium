@@ -14,7 +14,7 @@ namespace Akvarium
 
         {
 
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Zverimex_A;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Zverimex_A;Integrated Security=True;";
             using (SqlConnection spojeni = new SqlConnection(connectionString))
 
             {
@@ -35,6 +35,25 @@ namespace Akvarium
 
                     
                 }
+
+                Console.WriteLine("Dotaz_2");
+
+                string dotaz_2 = "SELECT [Akvarium_nazev],[Zakaznik].[Jmeno],[Zakaznik].[Prijmeni] FROM[Akvarium] INNER JOIN[Zakaznik] ON[Akvarium].[Id_zakaznik] = [Zakaznik].[Id_Zakaznik] ORDER BY[Akvarium_nazev];";
+                using (SqlDataAdapter adapter = new SqlDataAdapter(dotaz_2, spojeni))
+                using (DataSet vysledky = new DataSet())
+                {
+                    adapter.Fill(vysledky);
+
+                    foreach (DataRow radek in vysledky.Tables[0].Rows)
+                    {
+                        Console.WriteLine("Název akvaria: " + radek[0] + ", Jméno: " + radek[1] + ", Příjmení: " + radek[2]);
+                    }
+
+
+                }
+
+
+
 
 
                 spojeni.Close();

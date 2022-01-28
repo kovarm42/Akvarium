@@ -33,5 +33,16 @@ namespace Akvarium.Properties {
                 return ((string)(this["ZVERIMEXConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Zverimex_A;Integrated Security" +
+            "=True")]
+        public string Zverimex_AConnectionString {
+            get {
+                return ((string)(this["Zverimex_AConnectionString"]));
+            }
+        }
     }
 }
