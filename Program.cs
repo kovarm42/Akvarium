@@ -52,9 +52,9 @@ namespace Akvarium
 
                 }
 
-                Console.WriteLine("Dotaz_3");
+                Console.WriteLine("Dotaz_3 - Seznam rybiček, které nemohou žít v Akváriu_1 ");
 
-                string dotaz_3 = "SELECT [Ryba_nazev],[Akvarium_nazev],[Datum_pridani],[Datum_odebrani]FROM[Obsah_akvaria]INNER JOIN[Ryba] ON[Obsah_akvaria].[Id_Ryba] = [Ryba].[Id_Ryba]INNER JOIN[Akvarium] ON[Obsah_akvaria].[Id_akvarium] = [Akvarium].[Id_Akvarium];";
+                string dotaz_3 = "SELECT [Ryba_nazev]FROM[Obsah_akvaria]INNER JOIN[Ryba]ON[Obsah_akvaria].[Id_Ryba] = [Ryba].[Id_Ryba]INNER JOIN[Akvarium] ON[Obsah_akvaria].[Id_akvarium] = [Akvarium].[Id_Akvarium];";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(dotaz_3, spojeni))
                 using (DataSet vysledky = new DataSet())
                 {
@@ -62,7 +62,7 @@ namespace Akvarium
 
                     foreach (DataRow radek in vysledky.Tables[0].Rows)
                     {
-                        Console.WriteLine("Ryba název: " + radek[0] + ", Akvarium název: " + radek[1] + ", Datum přijetí: " + radek[2] + ", Datum odebrání: " + radek[3]);
+                        Console.WriteLine("Ryba název: " + radek[0]);
                     }
 
 
